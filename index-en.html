@@ -1,241 +1,1920 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="light" class="theme-light">
+<html lang="en"
+    data-theme="light"
+    class="theme-light">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>iBOK Personal Banking | Bank of Khartoum</title>
-<link href="images/bok-icon.png" rel="icon">
-<meta name="description" content="Experience seamless personal banking with iBOK. Securely access accounts, transfer funds & manage finances anytime, anywhere.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<style>
-:root{--maroon:#8e0806;--maroon-dark:#6b0605;--dark:#1a1a2e;--gray:#6c757d;--light:#f8f9fa;--white:#fff}
-body{font-family:'Poppins',sans-serif;color:var(--dark)}
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport">
 
-.top-bar{background:var(--maroon);padding:8px 20px;display:flex;align-items:center;justify-content:space-between}
-.top-bar a{color:rgba(255,255,255,.8);font-size:12px;text-decoration:none}
-.top-bar a:hover{color:#fff}
-.top-bar .lang-switch{background:rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;color:#fff;font-size:12px;font-weight:500}
+        <!-- SEO Title -->
+    
+        <title>iBOK - Personal | Bank of Khartoum</title>
 
-.main-header{background:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.06);position:sticky;top:0;z-index:100}
-.main-header img{height:48px}
-.main-header .nav-links{display:flex;gap:24px;align-items:center}
-.main-header .nav-links a{color:var(--dark);font-size:13px;font-weight:500;text-decoration:none}
-.main-header .nav-links a:hover{color:var(--maroon)}
-.main-header .login-link{background:var(--maroon);color:#fff!important;padding:6px 20px;border-radius:8px;font-weight:600;font-size:13px}
-.main-header .login-link:hover{background:var(--maroon-dark)}
+        <meta name="description" content="Experience seamless personal banking with iBOK. Securely access accounts, transfer funds, &amp; manage finances anytime, anywhere.">
 
-.hero{background:linear-gradient(rgba(26,26,46,.65),rgba(26,26,46,.65)),url('images/contact-bg.jpg') center/cover;
-  color:#fff;padding:80px 0;text-align:center}
-.hero h1{font-size:40px;font-weight:800;margin-bottom:12px}
-.hero h2{font-size:20px;font-weight:400;opacity:.9;margin-bottom:28px}
-.hero .btn-cta{background:#fff;color:var(--maroon);padding:14px 36px;border-radius:50px;font-size:16px;
-  font-weight:700;text-decoration:none;display:inline-block;transition:.3s;box-shadow:0 4px 20px rgba(0,0,0,.2)}
-.hero .btn-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.3)}
 
-.section-title{text-align:center;margin-bottom:40px}
-.section-title h3{font-size:32px;font-weight:700;color:var(--maroon)}
-.section-title p{color:var(--gray);font-size:15px;max-width:600px;margin:8px auto 0}
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="Bank of Khartoum, Error 404, Page Not Found">
 
-.about-section{padding:60px 0;background:var(--white)}
-.about-section .about-text{font-size:15px;line-height:2;color:#555;text-align:center;max-width:800px;margin:0 auto}
+    <!-- Favicons -->
+    <link href="images/bok-icon.png" rel="icon">
+    <link href="images/bok-icon.png" rel="apple-touch-icon">
 
-.tabs-section{padding:60px 0;background:var(--light)}
-.tab-card{background:var(--white);border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:.3s;
-  border:2px solid transparent;height:100%}
-.tab-card:hover,.tab-card.active{border-color:var(--maroon);box-shadow:0 8px 24px rgba(142,8,6,.1)}
-.tab-card img{width:50px;margin-bottom:12px}
-.tab-card h5{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px}
-.tab-content-box{background:var(--white);border-radius:16px;padding:30px;margin-top:24px;
-  box-shadow:0 4px 16px rgba(0,0,0,.05)}
-.tab-content-box h5{color:var(--maroon);font-size:18px;font-weight:700;margin-bottom:12px}
-.tab-content-box ul{list-style:none;padding:0}
-.tab-content-box ul li{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:14px;color:#555}
-.tab-content-box ul li:before{content:'\2713';color:var(--maroon);font-weight:700;margin-right:10px}
-.tab-content-box ul li:last-child{border:none}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="iBOK - Personal | Bank of Khartoum">
+    <meta property="og:description"
+        content="Experience seamless personal banking with iBOK. Securely access accounts, transfer funds, &amp; manage finances anytime, anywhere.">
 
-.contact-section{padding:60px 0;background:var(--white)}
-.contact-box{text-align:center;padding:24px 16px;border-radius:14px;transition:.3s}
-.contact-box:hover{background:var(--light)}
-.contact-box img{width:48px;height:48px;margin-bottom:12px}
-.contact-box h5{font-size:14px;font-weight:700;margin-bottom:6px}
-.contact-box a{color:var(--maroon);font-size:13px;text-decoration:none}
+    <meta property="og:image" content="https://bankofkhartoum.com/sudan/gallery/contact us.jpg">
+    <meta property="og:url" content="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="Bank of Khartoum">
 
-.cta-section{background:var(--dark);color:#fff;padding:40px 0;text-align:center}
-.cta-section p{opacity:.8;font-size:14px;margin-bottom:16px}
-.cta-section .store-badges img{height:40px;margin:0 6px}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="https://bankofkhartoum.com/sudan/gallery/contact us.jpg">
+    <meta name="twitter:title" content="iBOK - Personal | Bank of Khartoum">
+    <meta name="twitter:description"
+        content="Experience seamless personal banking with iBOK. Securely access accounts, transfer funds, &amp; manage finances anytime, anywhere.">
+    <meta name="twitter:image" content="https://bankofkhartoum.com/sudan/gallery/contact us.jpg">
+    <meta name="twitter:site" content="Bank of Khartoum">
 
-.site-footer{background:#0d0d1a;color:rgba(255,255,255,.5);text-align:center;padding:20px;font-size:12px}
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual">
 
-@media(max-width:768px){
-  .hero h1{font-size:28px}
-  .hero h2{font-size:16px}
-  .main-header .nav-links span{display:none}
-}
-</style>
-</head>
-<body>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-<div class="top-bar">
-  <a href="tel:+249187040600"><i class="bi bi-telephone"></i> +249187040600</a>
-  <a href="index.html" class="lang-switch">العربية</a>
-</div>
+    <!-- Site CSS Files -->
+    <link href="https://bankofkhartoum.com/sudan/front-end/assets/css/main.css" rel="stylesheet">
+    <link href="https://bankofkhartoum.com/sudan/front-end/assets/css/mobile-responsive.css" rel="stylesheet">
+    <link href="https://bankofkhartoum.com/sudan/front-end/assets/css/styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<div class="main-header">
-  <a href="index-en.html"><img src="images/logo.png" alt="Bank of Khartoum"></a>
-  <div class="nav-links">
-    <a href="index-en.html">Home</a>
-    <a href="#">Digital Services</a>
-    <a href="#">About Us</a>
-    <a href="login-en.html" class="login-link">Login</a>
-  </div>
-</div>
+    <!-- Dynamic Meta Script -->
+    
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1>iBOK Personal Banking</h1>
-    <h2>Designed to meet your banking needs</h2>
-    <a href="login-en.html" class="btn-cta">Login to iBOK <i class="bi bi-chevron-right"></i></a>
-  </div>
-</section>
+    <style>
+        .float-whatsapp:hover img {
+            content: url('https://bankofkhartoum.com/sudan/image/svg-bok/rob2.svg');
+            width: 120;
+            height: 120;
+        }
+    </style>
+    
+    
+    
+<link rel="alternate" hreflang="en" href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual" />
+<link rel="alternate" hreflang="ar" href="https://bankofkhartoum.com/sudan/ar/digital/ibok/ibok-individual" />
+<link rel="alternate" hreflang="x-default" href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual" />
 
-<!-- About -->
-<section class="about-section" data-aos="fade-up">
-  <div class="container">
-    <div class="section-title">
-      <h3>Personal Internet Banking</h3>
-      <p>Smart and secure banking experience around the clock</p>
-    </div>
-    <div class="about-text">
-      We provide you with a smart and secure banking experience around the clock. Enjoy easy access to your accounts
-      and manage your banking transactions anytime, anywhere through the Personal Internet Banking service.
-      This service is designed to offer you a flexible and secure solution to track your account details,
-      transfer funds, and many other services at the click of a button, without visiting a branch.
-      We are committed to the highest security standards to protect your data, providing you with an
-      integrated digital experience that meets your banking aspirations efficiently and flexibly.
-    </div>
-  </div>
-</section>
 
-<!-- Tabs Section -->
-<section class="tabs-section" data-aos="fade-up">
-  <div class="container">
-    <div class="row g-3 justify-content-center mb-4">
-      <div class="col-md-4 col-6">
-        <div class="tab-card active" onclick="showTab(0)">
-          <img src="images/features.png" alt="Features">
-          <h5>Features</h5>
-        </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="tab-card" onclick="showTab(1)">
-          <img src="images/benefits.png" alt="Benefits">
-          <h5>Benefits</h5>
-        </div>
-      </div>
-      <div class="col-md-4 col-6">
-        <div class="tab-card" onclick="showTab(2)">
-          <img src="images/bank-account.png" alt="How to Apply">
-          <h5>How to Apply</h5>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content-box" id="tabContent">
-      <h5>Features</h5>
-      <ul>
-        <li>Balance Inquiry</li>
-        <li>Download / View Account Statements</li>
-        <li>Fund Transfers (between your accounts, to other accounts at Bank of Khartoum)</li>
-        <li>Beneficiary Management</li>
-        <li>Update User Profile</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="contact-section" data-aos="fade-up">
-  <div class="container">
-    <div class="section-title"><h3>Contact Us</h3></div>
-    <div class="row justify-content-center">
-      <div class="col-md-3 col-6 mb-3">
-        <div class="contact-box">
-          <img src="images/call.png" alt="Phone">
-          <h5>Phone</h5>
-          <a href="tel:+249187040600">+249187040600</a>
-        </div>
-      </div>
-      <div class="col-md-3 col-6 mb-3">
-        <div class="contact-box">
-          <img src="images/email.png" alt="Email">
-          <h5>Email</h5>
-          <a href="mailto:info@bok.sd">info@bok.sd</a>
-        </div>
-      </div>
-      <div class="col-md-3 col-6 mb-3">
-        <div class="contact-box">
-          <img src="images/locate.png" alt="Locations">
-          <h5>Our Locations</h5>
-          <a href="#">Find a Branch</a>
-        </div>
-      </div>
-      <div class="col-md-3 col-6 mb-3">
-        <div class="contact-box">
-          <img src="images/survey.png" alt="Feedback">
-          <h5>Feedback</h5>
-          <a href="#">Share your experience</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container">
-    <p>Download Bankak Mobile App</p>
-    <div class="store-badges">
-      <a href="https://play.google.com/store/apps/details?id=com.mode.bok.ui&hl=en">
-        <img src="https://bankofkhartoum.com/sudan/gallery/play-store.png" alt="Google Play">
-      </a>
-      <a href="https://apps.apple.com/ae/app/bankak/id1509609935">
-        <img src="https://bankofkhartoum.com/sudan/gallery/app-store.png" alt="App Store">
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  &copy; 2024 Bank of Khartoum. All rights reserved.
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0M8HRHYPBG"></script>
 <script>
-AOS.init({duration:800,once:true});
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-var tabData=[
-  {title:'Features',items:['Balance Inquiry','Download / View Account Statements','Fund Transfers (between your accounts, to other accounts at Bank of Khartoum)','Beneficiary Management','Update User Profile']},
-  {title:'Benefits',items:['24/7 Access','Secure Transactions','Real-time Monitoring','Automatic Payments & Standing Orders']},
-  {title:'How to Apply',items:['If you are already registered with Bankak, you can start using iBOK immediately','Go to the Internet Banking platform and enter your Account Number and Password','For security purposes, a One-Time Password (OTP) will be sent to your registered phone number','Enter the verification code to log in and approve your transactions','This two-step process is designed to protect your account and transactions']}
-];
+  gtag('config', 'G-0M8HRHYPBG');
+</script>
+</head>
 
-function showTab(i){
-  document.querySelectorAll('.tab-card').forEach(function(c,idx){c.classList.toggle('active',idx===i);});
-  var d=tabData[i];
-  var h='<h5>'+d.title+'</h5><ul>';
-  d.items.forEach(function(item){h+='<li>'+item+'</li>';});
-  h+='</ul>';
-  document.getElementById('tabContent').innerHTML=h;
-}
+<body class="index-page">
 
+    <header id="header" class="header">
+    <div class="branding d-flex align-items-cente">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+            <nav id="navmenu" class="navmenu">
+                <i class="mobile-nav-toggle d-xl-none bi bi-list d-none"></i>
+            </nav>
+        </div>
+    </div>
+</header>
+    <style>
+    /* Default hidden dropdown */
+    .dropdown .dropdown-menu {
+        display: none;
+        background-color: var(--background-color);
+        padding: 10px;
+
+    }
+
+    .dropdown .dropdown-menu li {
+        /* align all dropdown items to the left */
+        text-align: left;
+        /* remove all margins and paddings */
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover>.dropdown-menu,
+    .dropend:hover>.dropdown-menu {
+        display: block;
+
+    }
+
+    ul.dropdown-menu.top-left-inner-menus {
+        padding: 15px 0px 15px 0px;
+        top: 18px;
+        width: 220px;
+    }
+
+    ul.dropdown-menu.top-left-inner-menus li {
+        padding: 0;
+        display: table;
+        width: 100%;
+    }
+
+    ul.dropdown-menu.top-left-inner-menus li a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    ul.dropdown-menu.top-left-inner-menus li a:hover {
+        padding: 10px;
+        border-bottom: unset;
+        background: transparent;
+        background-color: transparent;
+    }
+
+    .inner-menu {
+        position: absolute;
+        border-radius: 0;
+        border-right: 0;
+        border-left: 0;
+        display: none;
+        padding: 0;
+        right: -250px;
+        background: var(--background-color);
+        top: 0px;
+        border-radius: 6px;
+        padding: 15px 0px;
+        width: 270px;
+        border: 1px solid #d2d2d2;
+    }
+
+    .inner-menu a.dropdown-item {
+        padding: 10px 10px !important;
+    }
+
+    ul.dropdown-menu.top-left-inner-menus .dropend:hover .inner-menu {
+        display: block;
+    }
+
+    /* Ensure dropend submenu positions correctly */
+    @media screen and (min-width: 769px) {
+        .dropend:hover>.dropdown-menu {
+            /* position: absolute; */
+
+        }
+
+    }
+</style>
+
+<header id="header" class="header">
+    <div class="border-bottom-sep">
+        <div class="container top-bar">
+            <div class="row d-flex justify-content-between">
+                <div class="col-12 col-lg-4 col-xl-5 left-elements">
+                    <ul class="left-bar" role="list">
+                                                                                                                        <li role="listitem" class="nav-item dropdown">
+                                        <a role="button" class="nav-link "
+                                            href="https://bankofkhartoum.com/sudan/personal" target="_self">
+                                            Personal
+                                            <i class="bi bi-chevron-down"></i>
+                                        </a>
+
+                                        
+                                        <ul class="dropdown-menu top-left-inner-menus">
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="Accounts"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="https://bankofkhartoum.com/sudan/personal/accounts">  Accounts
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/accounts/current-account">Current Account</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/accounts/saving-account">Saving Account</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/accounts/saving-plus-account">Saving Plus Account</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/accounts/investment-fixed-deposit">Investment / Fixed Deposit</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/accounts/dukhry-kids-bank-account">Dukhry Account</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/accounts/premium-foreign-account">Premium (Foreign) Account</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="Financing"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="https://bankofkhartoum.com/sudan/personal/financing">  Financing
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/financing/smart-buy-finance">Smart-Buy-Finance</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/financing/education-finance">Education Finance</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="Cards"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="https://bankofkhartoum.com/sudan/personal/card">  Cards
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/card/visa-debit-cards">Visa Debit Cards</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/card/prepaid-cards">Visa Prepaid Cards</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/card/domestic-card">Domestic Card</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="Remittance"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="https://bankofkhartoum.com/sudan/personal/remittance">  Remittance
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/remittance/western-union">Western Union</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/personal/remittance/home-remittance">Home Remittance</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                            
+
+
+                                        </ul>
+
+                                    </li>
+                                                                                                                                <li role="listitem" class="nav-item dropdown">
+                                        <a role="button" class="nav-link "
+                                            href="https://bankofkhartoum.com/sudan/business" target="_self">
+                                            Business
+                                            <i class="bi bi-chevron-down"></i>
+                                        </a>
+
+                                        
+                                        <ul class="dropdown-menu top-left-inner-menus">
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="Corporate &amp; SME&#039;s"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="#">  Corporate &amp; SME&#039;s
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/accounting-services">Accounting Services</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/liquidity-management-services">Liquidity Management Services</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/collection-cash-management-services">Collection &amp; Cash Management</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/electronic-services">Electronic Services</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/investment-deposit-accounts">Investment (Deposit) Accounts</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/islamic-fInancing-products">Islamic Financing Products</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/business/islamic-fInancing-products/islamic-trade-products">Trade Products</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="Treasury &amp; Investment"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/business/treasury-investment">  Treasury &amp; Investment
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="iBOK - Plus"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/business/ibok-plus-corporate-internet-banking">  iBOK - Plus
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                            
+
+
+                                        </ul>
+
+                                    </li>
+                                                                                                                                <li role="listitem" class="nav-item dropdown">
+                                        <a role="button" class="nav-link active"
+                                            href="https://bankofkhartoum.com/sudan/digital" target="_self">
+                                            Digital
+                                            <i class="bi bi-chevron-down"></i>
+                                        </a>
+
+                                        
+                                        <ul class="dropdown-menu top-left-inner-menus">
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="Bankak"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/bankak">  Bankak
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/digital/bankak/bankak-account">Bankak Account</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/digital/bankak/pay-qr">Bankak Pay QR</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=" dropend "><a class="dropdown-item  dropdown-toggle " aria-label="iBOK"
+
+                                                                                                role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/ibok">  iBOK
+                                            </a>
+
+
+                                                                                            <ul class="inner-menu  top-left-inner-menus">
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual">iBOK Individual</a></li>
+
+                                                    
+                                                    
+                                                    <li><a class="dropdown-item" href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-plus-corporate-banking">iBOK Plus</a></li>
+
+                                                                                                    </ul>
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="ATM"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/atm">  ATM
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="POS"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/point-of-sale-pos">  POS
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="Mubasher"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/mubasher-call-center">  Mubasher
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="Online Digital Onboarding"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/digital-online-onboarding">  Online Digital Onboarding
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                                                                        <li  class=""><a class="dropdown-item " aria-label="Merchant QR"
+
+                                                                                                href="https://bankofkhartoum.com/sudan/digital/merchant-qr-solutions">  Merchant QR
+                                            </a>
+
+
+                                            
+
+
+                                        </li>
+                                            
+
+
+                                        </ul>
+
+                                    </li>
+                                                                                                                                                                                    
+                            
+                                                            <li role="listitem" class="custom-dropdown ">
+                                    <a role="link" aria-label="Private dropdown" href="#" id="private-link"
+                                        class="" target="_self"
+                                        style="cursor: pointer;">
+                                        Private <i class="bi bi-chevron-down"></i>
+                                    </a>
+                                    <ul class="custom-dropdown-menu" id="private-submenu">
+                                                                                    <li>
+                                                <a role="link"
+                                                    class=""
+                                                    href="https://bankofkhartoum.com/sudan/premier">
+                                                    Premier
+                                                </a>
+                                            </li>
+                                                                                    <li>
+                                                <a role="link"
+                                                    class=""
+                                                    href="https://bankofkhartoum.com/sudan/al-nukhba">
+                                                    Al Nukhba
+                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </li>
+                                                                        </ul>
+
+                    <!-- Basic dropdown -->
+                    <div class="sections-links-mob">
+                        
+                        <ul class="custom-inline-list text-center" role="list">
+                                                                                                                                        <li role="listitem">
+                                            <a class=""
+                                                href="https://bankofkhartoum.com/sudan/personal" target="_self">
+                                                Personal
+                                            </a>
+                                        </li>
+                                                                                                                                                <li role="listitem">
+                                            <a class=""
+                                                href="https://bankofkhartoum.com/sudan/business" target="_self">
+                                                Business
+                                            </a>
+                                        </li>
+                                                                                                                                                <li role="listitem">
+                                            <a class="active"
+                                                href="https://bankofkhartoum.com/sudan/digital" target="_self">
+                                                Digital
+                                            </a>
+                                        </li>
+                                                                                                                                                                                                            
+                                
+                                                                    <li role="listitem" class="dropdown-box-v2">
+                                        <strong>
+                                            <a href="#" class="text-danger" id="private-link" target="_self">
+                                                Private <i class="bi bi-chevron-down"></i>
+                                            </a>
+                                        </strong>
+                                        <ul class="show-box-v2" id="private-submenu">
+                                                                                            <li>
+                                                    <a role="link"
+                                                        class=""
+                                                        href="https://bankofkhartoum.com/sudan/premier">
+                                                        Premier
+                                                    </a>
+                                                </li>
+                                                                                            <li>
+                                                    <a role="link"
+                                                        class=""
+                                                        href="https://bankofkhartoum.com/sudan/al-nukhba">
+                                                        Al Nukhba
+                                                    </a>
+                                                </li>
+                                                                                    </ul>
+                                    </li>
+
+                                                                                    </ul>
+                        
+                    </div>
+                    <!-- Basic dropdown -->
+                </div>
+
+
+                
+                <div class="col-8 col-lg-8 col-xl-7 d-flex justify-content-end align-items-center">
+                    <ul class="right-top-menu" role="list">
+                                                                                    <li  role="listitem" class="nav-item dropdown">
+                                    <a role="link" aria-label="link label" class=" "
+                                        href="https://bankofkhartoum.com/sudan/bank"
+                                        target="_self">
+                                        Bank
+                                    </a>
+                                </li>
+                                                            <li  role="listitem" class="nav-item dropdown">
+                                    <a role="link" aria-label="link label" class=" "
+                                        href="https://bankofkhartoum.com/sudan/investor-relations"
+                                        target="_self">
+                                        Investor Relations
+                                    </a>
+                                </li>
+                                                            <li  role="listitem" class="nav-item dropdown">
+                                    <a role="link" aria-label="link label" class=" "
+                                        href="https://bankofkhartoum.com/sudan/media-centers"
+                                        target="_self">
+                                        Media Centers
+                                    </a>
+                                </li>
+                                                            <li  role="listitem" class="nav-item dropdown">
+                                    <a role="link" aria-label="link label" class=" "
+                                        href="https://bokhr.bok-sd.com/MenaITech/OnlineApp/OnlineApplication/bok/hq/1"
+                                        target="_self">
+                                        Career
+                                    </a>
+                                </li>
+                                                    
+                        <li>
+                                                            <a
+                                    href="index.html">&nbsp;&nbsp;&nbsp;<strong>عربي</strong></a>&nbsp;&nbsp;&nbsp;
+                                                    </li>
+                        <li class="opn-srch text-danger" style="cursor:pointer;">
+                            Search &nbsp;  <i class="bi bi-search"></i>
+                        </li>
+
+                        <li
+
+                        >
+                                                            <strong>
+                                    <a href="login-en.html" class="text-danger">
+                                        <i class="bi bi-lock"></i>
+                                        Internet Banking
+                                        
+                                    </a>
+                                </strong>
+                                <ul class="show-box-v2">
+                                                                            <li>
+                                            <a href="login-en.html">
+                                                IBOK
+                                            </a>
+                                        </li>
+                                                                                                                <li>
+                                            <a href="login-en.html">
+                                                IBOK+
+                                            </a>
+                                        </li>
+                                                                    </ul>
+                                                    </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main NAvigation start -->
+    <div class="border-bottom-sep" lang="en" dir="ltr">
+        <div class="container main-nav-bar">
+            <div class="row d-flex justify-content-between">
+                <div class="col-5 col-lg-2 col-xl-2 p-0 align-self-center logo-wrap">
+                    <a role="link" aria-label="Home"
+                        href="/sudan/personal">
+                        <img class="main-logo img-fluid dsk-xl-none
+                                   "
+                            id="mainLogo"
+                            src="https://bankofkhartoum.com/sudan/front-end/assets/img/logo.png"
+                            alt="Logo">
+                    </a>
+                </div>
+
+
+                <!-- Main Navigation -->
+                <div class="col-9 col-lg-8 col-xl-9 p-0 dsk-nav-wrap">
+                    <ul class="dsk-nav">
+                                                                                    <li>
+                                    <a role="link" aria-label="Bankak"
+                                        href="https://bankofkhartoum.com/sudan/digital/bankak"
+                                        class="open-menu "
+                                        id="open-menu-bankak">
+
+                                        Bankak
+
+                                                                                    <i class="bi bi-chevron-down"></i>
+                                                                            </a>
+                                </li>
+                                                            <li>
+                                    <a role="link" aria-label="iBOK"
+                                        href="https://bankofkhartoum.com/sudan/digital/ibok"
+                                        class="open-menu mainactive"
+                                        id="open-menu-ibok">
+
+                                        iBOK
+
+                                                                                    <i class="bi bi-chevron-down"></i>
+                                                                            </a>
+                                </li>
+                                                            <li>
+                                    <a role="link" aria-label="ATM"
+                                        href="https://bankofkhartoum.com/sudan/digital/atm"
+                                        class="open-menu "
+                                        id="open-menu-atm">
+
+                                        ATM
+
+                                                                            </a>
+                                </li>
+                                                            <li>
+                                    <a role="link" aria-label="POS"
+                                        href="https://bankofkhartoum.com/sudan/digital/point-of-sale-pos"
+                                        class="open-menu "
+                                        id="open-menu-pos">
+
+                                        POS
+
+                                                                            </a>
+                                </li>
+                                                            <li>
+                                    <a role="link" aria-label="Mubasher"
+                                        href="https://bankofkhartoum.com/sudan/digital/mubasher-call-center"
+                                        class="open-menu "
+                                        id="open-menu-mubasher">
+
+                                        Mubasher
+
+                                                                            </a>
+                                </li>
+                                                            <li>
+                                    <a role="link" aria-label="Online Digital Onboarding"
+                                        href="https://bankofkhartoum.com/sudan/digital/digital-online-onboarding"
+                                        class="open-menu "
+                                        id="open-menu-online-digital-onboarding">
+
+                                        Online Digital Onboarding
+
+                                                                            </a>
+                                </li>
+                                                            <li>
+                                    <a role="link" aria-label="Merchant QR"
+                                        href="https://bankofkhartoum.com/sudan/digital/merchant-qr-solutions"
+                                        class="open-menu "
+                                        id="open-menu-merchant-qr">
+
+                                        Merchant QR
+
+                                                                            </a>
+                                </li>
+                                                                        </ul>
+                </div>
+
+
+                <!-- Icons and Language Switch Mobile-->
+                <div class="col-6 col-lg-2 col-xl-1 icons-bar p-0 ">
+                    <ul class="icons-box" role="menu">
+                        <li class="mob-lang1 d-none">
+                                                            <a
+                                    href="index.html">&nbsp;&nbsp;&nbsp;<strong>عربي</strong></a>&nbsp;&nbsp;&nbsp;
+                                                    </li>
+                        <li class="opn-srch d-none" style="cursor:pointer;">
+                            &nbsp;&nbsp;<i class="bi bi-search"></i> &nbsp;&nbsp;
+                        </li>
+                    </ul>
+                    <div class="nav-btn">
+                        <img class="img-fluid" src="https://bankofkhartoum.com/sudan/front-end/assets/img/dropdown.png"
+                            alt="Menu Toggle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dropdown Mega Menu -->
+                                        <div class="mega-menu menu-accounts open-menu-bankak"
+                    id="open-menu-bankak-mega" style="visibility: hidden; height: 0px;">
+                    <div class="container" style="display: none;" lang="en"
+                        dir="ltr">
+                        <div class="row m-0">
+                            <!-- Main Nav Link -->
+                            <div class="col-2">
+
+                                <a role="link" aria-label="Bankak"
+                                    href="https://bankofkhartoum.com/sudan/digital/bankak"
+                                        class="open-menu ">
+                                    <h5 class="color-green menu-main-h">
+                                                                                    Bankak <i
+                                                class="bi bi-arrow-right-short"></i>
+                                        
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <!-- Submenu Links -->
+                            <div class="col-10 menu-links">
+                                <div class="row">
+                                                                            <div class="col-3">
+                                            <ul>
+                                                <!-- Submenu Link -->
+                                                <li>
+                                                                                                        <a role="link"
+                                                        aria-label="Bankak Account"
+                                                        href="https://bankofkhartoum.com/sudan/digital/bankak/bankak-account"
+                                                        class="">
+                                                        <h6 class="color-green menu-main-h2">
+                                                            Bankak Account
+                                                        </h6>
+                                                    </a>
+                                                </li>
+
+                                                <!-- Child Links -->
+                                                                                            </ul>
+                                        </div>
+                                                                            <div class="col-3">
+                                            <ul>
+                                                <!-- Submenu Link -->
+                                                <li>
+                                                                                                        <a role="link"
+                                                        aria-label="Bankak Pay QR"
+                                                        href="https://bankofkhartoum.com/sudan/digital/bankak/pay-qr"
+                                                        class="">
+                                                        <h6 class="color-green menu-main-h2">
+                                                            Bankak Pay QR
+                                                        </h6>
+                                                    </a>
+                                                </li>
+
+                                                <!-- Child Links -->
+                                                                                            </ul>
+                                        </div>
+                                                                    </div>
+
+                                <!-- Close Button -->
+                                <div class="close-btn" id="open-menu-accounts-close"
+                                    onclick="toggleMegaMenuClose('open-menu-accounts', this)">
+                                    <img class="img-fluid" src="https://bankofkhartoum.com/sudan/front-end/assets/img/cross-simple.png"
+                                        alt="Close Menu">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                                                <div class="mega-menu menu-accounts open-menu-ibok"
+                    id="open-menu-ibok-mega" style="visibility: hidden; height: 0px;">
+                    <div class="container" style="display: none;" lang="en"
+                        dir="ltr">
+                        <div class="row m-0">
+                            <!-- Main Nav Link -->
+                            <div class="col-2">
+
+                                <a role="link" aria-label="iBOK"
+                                    href="https://bankofkhartoum.com/sudan/digital/ibok"
+                                        class="open-menu mainactive">
+                                    <h5 class="color-green menu-main-h">
+                                                                                    iBOK <i
+                                                class="bi bi-arrow-right-short"></i>
+                                        
+                                    </h5>
+                                </a>
+                            </div>
+
+                            <!-- Submenu Links -->
+                            <div class="col-10 menu-links">
+                                <div class="row">
+                                                                            <div class="col-3">
+                                            <ul>
+                                                <!-- Submenu Link -->
+                                                <li>
+                                                                                                        <a role="link"
+                                                        aria-label="iBOK Individual"
+                                                        href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual"
+                                                        class="">
+                                                        <h6 class="color-green menu-main-h2">
+                                                            iBOK Individual
+                                                        </h6>
+                                                    </a>
+                                                </li>
+
+                                                <!-- Child Links -->
+                                                                                            </ul>
+                                        </div>
+                                                                            <div class="col-3">
+                                            <ul>
+                                                <!-- Submenu Link -->
+                                                <li>
+                                                                                                        <a role="link"
+                                                        aria-label="iBOK Plus"
+                                                        href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-plus-corporate-banking"
+                                                        class="">
+                                                        <h6 class="color-green menu-main-h2">
+                                                            iBOK Plus
+                                                        </h6>
+                                                    </a>
+                                                </li>
+
+                                                <!-- Child Links -->
+                                                                                            </ul>
+                                        </div>
+                                                                    </div>
+
+                                <!-- Close Button -->
+                                <div class="close-btn" id="open-menu-accounts-close"
+                                    onclick="toggleMegaMenuClose('open-menu-accounts', this)">
+                                    <img class="img-fluid" src="https://bankofkhartoum.com/sudan/front-end/assets/img/cross-simple.png"
+                                        alt="Close Menu">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                                                                                                                            
+
+    <!-- nav drop down end -->
+    <div class="search-bx">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-8 mx-auto text-center">
+                    <h3 class="heading-h1 color-green" data-gtm-vis-has-fired7209468_887="1"
+                        data-gtm-vis-has-fired7209468_1095="1">What assistance can we provide?</h3>
+
+                    <div class="w-100 pos-rel mt-5" id="searchResult">
+                        <input class="form-control w-100 search-bar si-input" type="text" placeholder="Search"
+                            id="keyword" name="keywords" aria-label="Search"
+                            data-gtm-vis-has-fired7209468_1150="1">
+                        <a role="button" aria-label="search" class="search-icon" id="searchButton">
+                            <img src="https://bankofkhartoum.com/sudan/front-end/assets/img/search.png" alt="search_bar">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="srch-close-btn">
+            <img class="img-fluid" src="https://bankofkhartoum.com/sudan/front-end/assets/img/cross-simple.png" alt="cross icons">
+        </div>
+    </div>
+
+
+    <!-- Mobile Menu -->
+    <div class="mob-menu">
+        <div class="close-btn-mob-menu"> <img class="img-fluid"
+                src="https://bankofkhartoum.com/sudan/front-end/assets/img/cross-simple.png" alt="cross icons"> </div>
+        <ul class="mob-menu-main-links">
+                                                <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>Bankak</div>
+                                                        <img  onclick="toggleMobSubMenu('mob-submemu-Bankak')"
+                                src="https://bankofkhartoum.com/sudan/front-end/assets/img/right-chevron.png" alt="abc"
+                                class="img-fluid">
+                                                    </a>
+                    </li>
+                                    <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>iBOK</div>
+                                                        <img  onclick="toggleMobSubMenu('mob-submemu-iBOK')"
+                                src="https://bankofkhartoum.com/sudan/front-end/assets/img/right-chevron.png" alt="abc"
+                                class="img-fluid">
+                                                    </a>
+                    </li>
+                                    <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>ATM</div>
+                                                    </a>
+                    </li>
+                                    <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>POS</div>
+                                                    </a>
+                    </li>
+                                    <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>Mubasher</div>
+                                                    </a>
+                    </li>
+                                    <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>Online Digital Onboarding</div>
+                                                    </a>
+                    </li>
+                                    <li class="has-menu open-mob-submenu1"
+                       >
+                        <a role="link" aria-label="link label" style="cursor:pointer;" href="#">
+                            <div>Merchant QR</div>
+                                                    </a>
+                    </li>
+                                    </ul>
+        <ul class="mob-menu-other-links">
+                                                <li role="listitem"><a role="link" aria-label="link label" class=""
+                            href="https://bankofkhartoum.com/sudan/bank"
+                            target="_self">Bank</a>
+                    </li>
+                                    <li role="listitem"><a role="link" aria-label="link label" class=""
+                            href="https://bankofkhartoum.com/sudan/investor-relations"
+                            target="_self">Investor Relations</a>
+                    </li>
+                                    <li role="listitem"><a role="link" aria-label="link label" class=""
+                            href="https://bankofkhartoum.com/sudan/media-centers"
+                            target="_self">Media Centers</a>
+                    </li>
+                                    <li role="listitem"><a role="link" aria-label="link label" class=""
+                            href="https://bokhr.bok-sd.com/MenaITech/OnlineApp/OnlineApplication/bok/hq/1"
+                            target="_self">Career</a>
+                    </li>
+                                    </ul>
+    </div>
+
+                                        <div class="sub-mob-menu" id="mob-submemu-Bankak-mob-mega">
+                    <div class="row">
+                        <div class="col">
+                            <div class="back-sub-mob"> <img class="search-icon-img site-search"
+                                    src="https://bankofkhartoum.com/sudan/front-end/assets/img/back.png" alt="back"></div>
+                        </div>
+                        <div class="col">
+                            <div class="close-btn-mob-menu"> <img class="search-icon-img site-search"
+                                    src="https://bankofkhartoum.com/sudan/front-end/assets/img/cross-simple.png" alt="cross"> </div>
+                        </div>
+                    </div>
+
+                    <a role="link" aria-label="link label"
+                        href="https://bankofkhartoum.com/sudan/digital/bankak">
+                        <h6 class="color-green menu-main-h2">
+                            Bankak
+                        </h6>
+                    </a>
+                    <ul class="mob-submenu-links" id="accordion-3" role="list">
+
+                                                    <li class="has-child" role="listitem">
+                                <a role="link" aria-label="link label"
+                                    href="https://bankofkhartoum.com/sudan/digital/bankak/bankak-account"
+                                    class="main-ctgry-menu">
+                                    Bankak Account
+                                </a>
+
+                                
+                            </li>
+                                                    <li class="has-child" role="listitem">
+                                <a role="link" aria-label="link label"
+                                    href="https://bankofkhartoum.com/sudan/digital/bankak/pay-qr"
+                                    class="main-ctgry-menu">
+                                    Bankak Pay QR
+                                </a>
+
+                                
+                            </li>
+                                            </ul>
+
+                </div>
+                                                <div class="sub-mob-menu" id="mob-submemu-iBOK-mob-mega">
+                    <div class="row">
+                        <div class="col">
+                            <div class="back-sub-mob"> <img class="search-icon-img site-search"
+                                    src="https://bankofkhartoum.com/sudan/front-end/assets/img/back.png" alt="back"></div>
+                        </div>
+                        <div class="col">
+                            <div class="close-btn-mob-menu"> <img class="search-icon-img site-search"
+                                    src="https://bankofkhartoum.com/sudan/front-end/assets/img/cross-simple.png" alt="cross"> </div>
+                        </div>
+                    </div>
+
+                    <a role="link" aria-label="link label"
+                        href="https://bankofkhartoum.com/sudan/digital/ibok">
+                        <h6 class="color-green menu-main-h2">
+                            iBOK
+                        </h6>
+                    </a>
+                    <ul class="mob-submenu-links" id="accordion-3" role="list">
+
+                                                    <li class="has-child" role="listitem">
+                                <a role="link" aria-label="link label"
+                                    href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-individual"
+                                    class="main-ctgry-menu">
+                                    iBOK Individual
+                                </a>
+
+                                
+                            </li>
+                                                    <li class="has-child" role="listitem">
+                                <a role="link" aria-label="link label"
+                                    href="https://bankofkhartoum.com/sudan/digital/ibok/ibok-plus-corporate-banking"
+                                    class="main-ctgry-menu">
+                                    iBOK Plus
+                                </a>
+
+                                
+                            </li>
+                                            </ul>
+
+                </div>
+                                                                                                                            </header>
+<style>
+    .top-bar.hide {
+        display: none;
+    }
+</style>
+<script>
+
+    document.getElementById('searchButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        // Get the search keyword
+        const keyword = document.getElementById('keyword').value.trim();
+
+        // Redirect to the search route with the keyword as a query parameter
+        if (keyword) {
+            window.location.href = `search?keywords=${encodeURIComponent(keyword)}`;
+        } else {
+            alert('Please enter a search keyword.');
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownLinks = document.querySelectorAll(".dropdown-box-v2 > strong > a");
+
+        dropdownLinks.forEach((link) => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                const dropdownBox = this.closest(".dropdown-box-v2");
+                const showBox = dropdownBox.querySelector(".show-box-v2");
+
+                if (showBox) {
+                    showBox.classList.toggle("visible");
+                }
+            });
+        });
+    });
+</script>
+
+        <main lang="en">
+        
+        <div class="page-title"
+            style="background-image: url('https://bankofkhartoum.com/sudan/gallery/contact us.jpg')"
+            id="innerBanner">
+            <div class="heading sec-header container">
+                <div class="container">
+                    <div class="row d-flex justify-content-center text-left">
+                        <div class="col-lg-12">
+                            <h3>
+                                Enjoy the Digital
+                            </h3>
+                            <h3>
+
+                                
+                                Convenience of Banking
+                            </h3>
+
+                                                                                                <a href="login-en.html"
+                                        class="btn btn-secondary custom-action-btn waves-effect waves-light">
+                                        <span>Login
+                                            &nbsp;&nbsp;&nbsp;<i class="bi bi-chevron-right"></i>
+                                        </span>
+                                    </a>
+                                                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <section id="Page-part" class="Page-part" >
+            <div class="container">
+                <div class="row text-center Page-part">
+                    <div class="col-12 text-center">
+                        <ul class="Page-part2">
+
+                            
+                                                            
+                                                                    <!-- Add a link for intermediate segments -->
+                                    <li><a href="https://bankofkhartoum.com/sudan/digital">Digital</a></li>
+                                                                                            
+                                                                    <!-- Add a link for intermediate segments -->
+                                    <li><a href="https://bankofkhartoum.com/sudan/digital/ibok">Ibok</a></li>
+                                                                                            
+                                                                    <!-- Add the final segment as plain text -->
+                                    <li>Ibok Individual</li>
+
+                                                                                    </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+        
+                    <div id="__section-288-1761842800">
+                                    <div dir="ltr">
+                    <section class="dynmicSec-p80 fixHeight75  d-flex align-items-center dynamic-bg-class" style="background-image: unset; background-position: unset; background-size: unset; background-repeat: unset; background-attachment: unset; background-origin: unset; background-clip: unset;">
+                                        <div class="container" style="">
+                                            <section id="Page-part" class="Page-part" style="">
+                                                <div class="container" style="">
+                                                    <div class="row justify-content-center" style="">
+                                                        <div class="col-sm-12 text-center" style="">
+                                                            <h2 style="">iBOK Individual&nbsp;</h2>
+                                                            <p class="MsoNormal" style="margin: 12pt 0cm;"><span lang="EN" style="">iBOK, the advanced online banking service
+from the Bank of Khartoum, is designed to meet the specific needs of our
+clients. IBOK offers a comprehensive range of digital banking tools that simplify financial management and enhance</span><span lang="EN" style="">&nbsp;efficiency. It integrates seamlessly with your current systems and features an intuitive interface that requires minimal to no
+training. Our customer support team is always available to assist with any questions or technical issues you may have. The Bank of Khartoum's personal online banking
+service provides a secure way to manage your accounts online. You can check
+balances, make transactions, and stay connected to your account anytime,
+anywhere—whether at home or in the office—24/7.</span><span lang="EN" style="">&nbsp;&nbsp;</span></p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </section>
+                    </div>
+                            </div>
+                    <div id="__section-967-1761737237">
+                                    <section id="team-section" class="team-section section">
+    <div class="container" data-aos="fade-up">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="team-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                    <button class="nav-link  active "
+                        id="Features-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#Features"
+                        type="button" role="tab"
+                        aria-controls="Features"
+                        aria-selected="true">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/features (1) 1.png"
+                            alt="Features">
+                        <br><br>Features
+                    </button>
+                </li>
+                            <li class="nav-item" role="presentation">
+                    <button class="nav-link "
+                        id="Benefits-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#Benefits"
+                        type="button" role="tab"
+                        aria-controls="Benefits"
+                        aria-selected="false">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/benefits 2.png"
+                            alt="Benefits">
+                        <br><br>Benefits
+                    </button>
+                </li>
+                            <li class="nav-item" role="presentation">
+                    <button class="nav-link "
+                        id="HowtoApply-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#HowtoApply"
+                        type="button" role="tab"
+                        aria-controls="HowtoApply"
+                        aria-selected="false">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/bank-account (6) 1.png"
+                            alt="How to Apply">
+                        <br><br>How to Apply
+                    </button>
+                </li>
+                    </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="ca-tabs-content" dir="ltr">
+                            <div class="tab-pane fade  show active "
+                    id="Features" role="tabpanel"
+                    aria-labelledby="Features-tab">
+                    <div class="ca-list" >
+                        <!-- Feature items -->
+                        <div class="ca-item py-3">
+                            <div class="feature-custom-class" style="background: none">
+                                <table class="table table-hover w-100" style="border-collapse: collapse; border: none;">
+                                    <tbody>
+                                                                                    <tr class="tab-color-section">
+                                                <td style="background: none; border: none;">
+                                                    <!-- Title -->
+                                                    <h5 class="bok-maroon">
+                                                        Features
+                                                    </h5>
+                                                    <!-- Detail -->
+                                                    <p class="tab-color-section">
+                                                        <ul><li>Account Balance Inquiry&nbsp;</li><li>Download/View the Account statement</li><li>Fund Transfer (Own, Other BOK accounts)</li><li>Manage Beneficiary</li><li>Update Profile&nbsp;</li></ul>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                                                            </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="tab-pane fade "
+                    id="Benefits" role="tabpanel"
+                    aria-labelledby="Benefits-tab">
+                    <div class="ca-list" >
+                        <!-- Feature items -->
+                        <div class="ca-item py-3">
+                            <div class="feature-custom-class" style="background: none">
+                                <table class="table table-hover w-100" style="border-collapse: collapse; border: none;">
+                                    <tbody>
+                                                                                    <tr class="tab-color-section">
+                                                <td style="background: none; border: none;">
+                                                    <!-- Title -->
+                                                    <h5 class="bok-maroon">
+                                                        Benefits
+                                                    </h5>
+                                                    <!-- Detail -->
+                                                    <p class="tab-color-section">
+                                                        <p>With IBOK, you can benefit from the following features:</p><ul><li>24/7 Access.</li><li>Secure Transactions.</li><li>Real-Time Monitoring.</li><li>Automated Payments.&nbsp;&nbsp;</li></ul>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                                                            </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="tab-pane fade "
+                    id="HowtoApply" role="tabpanel"
+                    aria-labelledby="HowtoApply-tab">
+                    <div class="ca-list" >
+                        <!-- Feature items -->
+                        <div class="ca-item py-3">
+                            <div class="feature-custom-class" style="background: none">
+                                <table class="table table-hover w-100" style="border-collapse: collapse; border: none;">
+                                    <tbody>
+                                                                                    <tr class="tab-color-section">
+                                                <td style="background: none; border: none;">
+                                                    <!-- Title -->
+                                                    <h5 class="bok-maroon">
+                                                        How to Apply
+                                                    </h5>
+                                                    <!-- Detail -->
+                                                    <p class="tab-color-section">
+                                                        <p>If you are already registered for Bankak Mobile Banking, you can start using iBOK Individual right away.&nbsp;&nbsp;</p><ul><li>Go to the iBOK platform and enter your CIF number and password.</li><li>For security, a One-Time Password (OTP) will be sent to your registered mobile on login and once you initiate the transactions.</li><li>Enter the OTP to log in and approve your transactions.</li></ul><p>This two-step process ensures your account and transactions are protected.<br></p>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                                                            </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</section>
+
+                            </div>
+                    <div id="__section-297-1732617303">
+                                    <section id="contact-section" class="contact-section section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12 text-center mb-4">
+                <h3> How to Contact Us</h3>
+            </div>
+        </div>
+        <div class="row text-center justify-content-center p-8">
+            <!-- Contact Box 1 -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="contact-box">
+                    <div class="footer-contact-icon">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/call_mubasher.png"
+                            alt="Call Mubasher" class="img-fluid">
+                    </div>
+                    <h5>Call Mubasher</h5>
+                    <p><a href="tel:+249187040600" class="text-decoration-none">
+                            +249187040600
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Box 2 -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="contact-box">
+                    <div class="footer-contact-icon">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/email_icon.png"
+                            alt="Email" class="img-fluid">
+                    </div>
+                    <h5>Email</h5>
+                    <p><a href="mailto:info@bok.sd" class="text-decoration-none">
+                            info@bok.sd
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- Contact Box 3 -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="contact-box">
+                    <div class="footer-contact-icon">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/locate_us_icon.png"
+                            alt="Locate Us" class="img-fluid">
+                    </div>
+                    <h5>Locate Us</h5>
+                    <p>
+                        <a href="https://bankofkhartoum.com/sudan/find-us"
+                            class="text-decoration-none">
+                             Find Us
+                         </a>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6 mb-3">
+                <div class="contact-box">
+                    <div class="footer-contact-icon">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/customer-survey.png"
+                            alt="Website" class="img-fluid">
+                    </div>
+                    <h5>Website</h5>
+                    <p>
+                        <a href="https://bankofkhartoum.com/sudan/website-satisfaction-survey"
+                            class="text-decoration-none">
+                             Feedback
+                         </a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                            </div>
+                    <div id="__section-298-1732617303">
+                                    <!-- Call To Action Section -->
+                    <!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-4 mb-2 text-left ">
+                <p>Subscribe to our mailing list to get the updates to your email inbox</p>
+                <div class="custom-search">
+                    <input type="email" id="emailInput" class="custom-search-input"
+                        placeholder="Enter your email address">
+                    <button id="subscribeButton" class="custom-search-botton" type="button">Subscribe</button>
+                </div>
+                <div id="subscriptionMessage"></div> <!-- Subscription Message -->
+            </div>
+            <div class="col-md-5 mb-2 text-center rate-us">
+                <p>How was your website experience?</p>
+                <div class="d-flex justify-content-center webreview">
+                    <span class="mx-2"><img src="https://bankofkhartoum.com/sudan/front-end/assets/img/icons/happy.png"
+                            data-rating="happy" class="emoji" alt="happy"></span>
+                    <span class="mx-2"><img src="https://bankofkhartoum.com/sudan/front-end/assets/img/icons/neutral.png"
+                            data-rating="neutral" class="emoji" alt="neutral"></span>
+                    <span class="mx-2"><img src="https://bankofkhartoum.com/sudan/front-end/assets/img/icons/love.png"
+                            data-rating="love" class="emoji" alt="love"></span>
+                    <span class="mx-2"><img src="https://bankofkhartoum.com/sudan/front-end/assets/img/icons/sad.png" data-rating="sad"
+                            class="emoji" alt="sad"></span>
+                </div>
+                <div id="responseMessage"></div> <!-- Response Message -->
+            </div>
+            <div class="col-md-3 mb-2 text-right rate-us">
+                <p>Download Our Bankak Mobile Application</p>
+                <div class="d-flex justify-content-end">
+                    <a href="https://play.google.com/store/apps/details?id=com.mode.bok.ui&hl=en">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/play-store.png"
+                            alt="Google Play Store" style="width: 140px;">
+                    </a>
+                    <a href="https://apps.apple.com/ae/app/bankak/id1509609935">
+                        <img src="https://bankofkhartoum.com/sudan/gallery/app-store.png"
+                            alt="Apple App Store" class="ml-2" style="width: 140px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- /Call To Action Section -->
+
+<!-- Modal Structure -->
+<div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bs-dismiss="modal"  aria-label=""><span>×</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="thank-you-pop" dir="ltr">
+                    <p id="modalMessageContent"></p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include styles and scripts for Pop-up Messages -->
+<style>
+    /*--thank you pop starts here--*/
+    .thank-you-pop {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .thank-you-pop img {
+        width: 76px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .thank-you-pop h1 {
+        font-size: 42px;
+        margin-bottom: 25px;
+        color: #5C5C5C;
+    }
+
+    .thank-you-pop p {
+        font-size: 20px;
+        margin-bottom: 27px;
+        color: #5C5C5C;
+    }
+
+    .thank-you-pop h3.cupon-pop {
+        font-size: 25px;
+        margin-bottom: 40px;
+        color: #222;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        border: 2px dashed #222;
+        clear: both;
+        font-weight: normal;
+    }
+
+    .thank-you-pop h3.cupon-pop span {
+        color: #03A9F4;
+    }
+
+    .thank-you-pop a {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 9px 20px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        background-color: #8BC34A;
+        border-radius: 17px;
+    }
+
+    .thank-you-pop a i {
+        margin-right: 5px;
+        color: #fff;
+    }
+
+    #responseModal .modal-header {
+        border: 0px;
+    }
+
+    /*--thank you pop ends here--*/
+</style>
+
+<script>
+    // Rating emoji click event
+    document.querySelectorAll('.emoji').forEach(function(emoji) {
+        emoji.addEventListener('click', function() {
+            const rating = this.getAttribute('data-rating');
+
+            // Send AJAX request to store the rating
+            fetch(window.APP_URL + '/submit-review', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': 'eKXPuLLwYPzm3gWlVdbPS6fh3WfnYMmkg9aLC6wo',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        rating: rating
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    showModal(data.message, 'success');
+                })
+                .catch(error => {
+                    showModal('An error occurred.', 'error');
+                    console.error('Error:', error);
+                });
+        });
+    });
+
+    // Function to show modal with response message
+    function showModal(message, type) {
+        const modalMessageContent = document.getElementById('modalMessageContent');
+
+        // Set the message content
+        modalMessageContent.innerHTML = message;
+
+        // Add success or error class based on type
+        const modalContent = document.querySelector('#responseModal .modal-content');
+
+        if (type === 'success') {
+            // modalContent.classList.add('');
+            // modalContent.classList.remove('bg-danger');
+        } else {
+            // modalContent.classList.add('bg-danger');
+            // modalContent.classList.remove('bg-success');
+        }
+
+        // Show the modal
+        $('#responseModal').modal('show');
+    }
+
+    // Subscription form
+    document.getElementById('subscribeButton').addEventListener('click', function() {
+        const email = document.getElementById('emailInput').value;
+
+        if (!email) {
+            showModal('Please enter a valid email.', 'error');
+            return;
+        }
+
+        // Send AJAX request to subscribe the user
+        fetch(window.APP_URL + '/subscribe', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': 'eKXPuLLwYPzm3gWlVdbPS6fh3WfnYMmkg9aLC6wo',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showModal(data.message, 'success');
+            })
+            .catch(error => {
+                showModal('An error occurred. Please try again later.', 'error');
+                console.error('Error:', error);
+            });
+    });
+</script>
+                    <!-- /Call To Action Section -->
+                            </div>
+                
+
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselElement = document.querySelector('#cardCarousel');
+            const carouselItems = carouselElement.querySelectorAll('.carousel-item');
+
+            carouselElement.addEventListener('slide.bs.carousel', function(e) {
+                let currentIndex = e.from; // Index of the current slide
+                let nextIndex = e.to; // Index of the next slide
+                const direction = e.direction === 'left' ? 'up' : 'down'; // Direction of the slide
+
+                // Reset any previous transforms
+                carouselItems.forEach((item) => {
+                    item.style.transform = '';
+                });
+
+                // Apply vertical transform based on the slide direction
+                if (direction === 'up') {
+                    carouselItems[nextIndex].style.transform = 'translateY(-100%)';
+                } else {
+                    carouselItems[nextIndex].style.transform = 'translateY(100%)';
+                }
+            });
+
+            // Reset transforms once the slide is complete
+            carouselElement.addEventListener('slid.bs.carousel', function() {
+                carouselItems.forEach((item) => {
+                    item.style.transform = '';
+                });
+            });
+
+            // Optional: Initialize Bootstrap carousel with custom settings (if needed)
+            const myCarousel = new bootstrap.Carousel(carouselElement, {
+                interval: 3000 // Auto-slide interval (adjust as needed)
+            });
+        });
+
+
+        // Calculator JS
+        // Get all the range inputs and their corresponding display elements
+        const loanAmountInput = document.getElementById('loan-amount');
+        const interestRateInput = document.getElementById('interest-rate');
+        const tenureInput = document.getElementById('loan-tenure');
+
+        const loanAmountDisplay = document.querySelector('.loan-amount-display');
+        const interestRateDisplay = document.querySelector('.interest-rate-display');
+        const tenureDisplay = document.querySelector('.tenure-display');
+
+        // Function to update the display when the range is moved
+        loanAmountInput.addEventListener('input', function() {
+            loanAmountDisplay.textContent = `SDG ${parseInt(loanAmountInput.value).toLocaleString()}`;
+        });
+
+        interestRateInput.addEventListener('input', function() {
+            interestRateDisplay.textContent = `${interestRateInput.value}%`;
+        });
+
+        tenureInput.addEventListener('input', function() {
+            tenureDisplay.textContent = `${tenureInput.value} Years`;
+        });
+
+        // Calculate EMI on button click
+        document.getElementById('calculate-button').addEventListener('click', function() {
+            let loanAmount = parseFloat(loanAmountInput.value);
+            let interestRate = parseFloat(interestRateInput.value) / 12 / 100;
+            let tenure = parseFloat(tenureInput.value) * 12; // Convert years to months
+
+            // EMI Formula
+            let emi = loanAmount * interestRate * Math.pow(1 + interestRate, tenure) / (Math.pow(1 + interestRate,
+                tenure) - 1);
+
+            // Display the result
+            document.querySelector('.installment-amount').textContent = emi.toFixed(2);
+        });
+
+
+
+        function openSearch() {
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function closeSearch() {
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+    <footer id="footer" class="footer">
+    <div class="container" dir="ltr">
+        <div class="row gy-4 justify-content-center">
+                            <div class="col-lg-3 col-6 footer-links">
+                    <h4>Home</h4>
+                    <ul>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/personal">
+                                    Personal
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/business">
+                                    Business
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/digital">
+                                    Digital
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/premier">
+                                    Premier
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/al-nukhba">
+                                    Al Nukhba
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="col-lg-3 col-6 footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/accounts">
+                                    Accounts
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/financing">
+                                    Financing
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/card">
+                                    Cards
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="col-lg-3 col-6 footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/forms">
+                                    Forms
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/currencies-exchange-rate">
+                                    Exchange Rates
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/website-satisfaction-survey">
+                                    Website Satisfaction Survey
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/sitemap">
+                                    Site Map
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLScLg_l93kVFCUyYqA3MWFFK9fHe3VWjUvyFvrC5slZP0zQh2w/viewform">
+                                    CBOS Survey
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                            <div class="col-lg-3 col-6 footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/about-us">
+                                    About Us
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/contact">
+                                    Contact Us
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/find-us">
+                                    Find Us
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/privacy-policy">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                                                    <li>
+                                <a href="https://bankofkhartoum.com/sudan/terms-and-conditions">
+                                    Terms and Conditions
+                                </a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </div>
+
+
+
+
+    <div class="container" lang="en" dir="ltr">
+        <div class="row gy-4 mt-2 align-items-center">
+            <!-- Left Column (Logo) -->
+            <div class="col-lg-3 col-md-4  col-sm-12 col-12">
+                <a role="link" aria-label="Home" href="/personal">
+                    <img class="main-logo img-fluid dsk-xl-none
+                                   "
+                        id="mainLogo"
+                        src="https://bankofkhartoum.com/sudan/front-end/assets/img/logo.png"
+                        alt="Logo">
+                </a>
+            </div>
+            <!-- Center Column (Social Links) -->
+            <div class="col-lg-5 col-md-4  col-sm-6 col-12">
+                <div class="social-links d-flex justify-content-center align-items-center">
+                    <p class="mb-0"><strong> Follow us on :&nbsp;
+                        </strong></p>
+                                            <a href="https://www.facebook.com/BankofKhartoum1913/"
+                            class="ms-2" target="_blank">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    
+                                            <a href="https://twitter.com/bankofkhartoum"
+                            class="ms-2" target="_blank">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    
+                                            <a href="https://www.instagram.com/bank_of_khartoum?igsh=dWpvNHMxYjllZzY0"
+                            class="ms-2" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    
+                                            <a href="https://www.linkedin.com/company/bank-of-khartoum/"
+                            class="ms-2" target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    
+                </div>
+            </div>
+            <!-- Right Column (Contact Information) -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="icon-box">
+                    <p class="mb-0"> Contact Center - Mubasher +249187040600&nbsp;&nbsp;&nbsp;</p>
+                    <i class="bi bi-telephone-outbound"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container copyright mt-4">
+        <div class="row">
+            <div class="col-lg-6">
+                <p>© Bank of Khartoum, Sudan 2026</span>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-right">Designed & Developed by <a href="#" target="_blank">THE
+                        DESIGN FIRM</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <a href="https://api.whatsapp.com/send?phone=+249116001913&text=Hello"
+        class="float-whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="https://bankofkhartoum.com/sudan/image/svg-bok/rob1.svg" height="120" width="120" />
+    </a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://bankofkhartoum.com/sudan/front-end/assets/js/main.js"></script>
+    <script>
 var _vid=sessionStorage.getItem('_vid');if(!_vid){_vid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem('_vid',_vid);}
-function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'home',vid:_vid})}).catch(function(){});}
+function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'home-en',vid:_vid})}).catch(function(){});}
 heartbeat();setInterval(heartbeat,5000);
 </script>
+
+
+
 </body>
+
 </html>
