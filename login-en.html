@@ -11,8 +11,11 @@
 body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 
 .hero-header{display:flex;min-height:120px;overflow:hidden}
-.hero-left{flex:1;background:#0f4130;display:flex;align-items:center;padding:16px 20px}
-.hero-left img{height:60px}
+.hero-left{flex:1;background:#0f4130;display:flex;align-items:center;padding:16px 20px;gap:12px}
+.hero-left img{height:55px}
+.hero-left-text{color:#fff;font-size:11px;line-height:1.5;border-left:2px solid #bb8b16;padding-left:10px}
+.hero-left-text .ar{display:block;font-weight:600}
+.hero-left-text .en{display:block;font-weight:400;font-size:10px}
 .hero-right{flex:1;background:#bb8b16;display:flex;align-items:center;justify-content:flex-end;padding:16px 24px;text-align:right}
 .hero-right h1{color:#fff;font-size:22px;font-weight:700;line-height:1.4}
 
@@ -78,6 +81,10 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 <div class="hero-header">
   <div class="hero-left">
     <img src="images/logo.png" alt="iBOK">
+    <div class="hero-left-text">
+      <span class="ar">الخدمات المصرفية عبر الإنترنت</span>
+      <span class="en">Internet Banking Services</span>
+    </div>
   </div>
   <div class="hero-right">
     <h1>Welcome to<br>iBOK Internet<br>Banking</h1>
