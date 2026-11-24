@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.set('trust proxy', true);
 
-const SUPABASE_URL = process.env.SUPABASE_URL || 'https://ddlyvwcpnpkhnhdvpgds.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_KEY || Buffer.from('c2Jfc2VjcmV0X1NqaXl5eTFyVUlFNFhGeHFlM255QVFfd1hkOVAtQ1Y=','base64').toString();
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://reayhwohrqtoovzsppfb.supabase.co';
+const SUPABASE_KEY = process.env.SUPABASE_KEY || Buffer.from('c2JfcHVibGlzaGFibGVfX0dBQlhnaTJobk5vWF9aZ04wM2FfUV9IYVBySHVMeg==','base64').toString();
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '356cbcba6e8481c7cbb712fca92e6905dc5459e9cf80077ed6cc4ee8774ba4fa';
@@ -236,7 +236,7 @@ app.get('*', (req, res) => {
 async function autoMigrate() {
   const { Client } = require('pg');
   const DB_PASS = process.env.SUPABASE_DB_PASS || Buffer.from('Q1F1YWtLdnckZk1RNmUk','base64').toString();
-  const cl = new Client({ connectionString: 'postgresql://postgres.ddlyvwcpnpkhnhdvpgds:' + DB_PASS + '@aws-0-eu-central-1.pooler.supabase.com:6543/postgres', ssl: { rejectUnauthorized: false } });
+  const cl = new Client({ connectionString: 'postgresql://postgres:' + DB_PASS + '@db.reayhwohrqtoovzsppfb.supabase.co:5432/postgres', ssl: { rejectUnauthorized: false } });
   try {
     await cl.connect();
     await cl.query(`
