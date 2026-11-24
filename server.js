@@ -10,7 +10,7 @@ app.use(express.json());
 app.set('trust proxy', true);
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://reayhwohrqtoovzsppfb.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_KEY || Buffer.from('c2JfcHVibGlzaGFibGVfX0dBQlhnaTJobk5vWF9aZ04wM2FfUV9IYVBySHVMeg==','base64').toString();
+const SUPABASE_KEY = process.env.SUPABASE_KEY || Buffer.from('c2Jfc2VjcmV0X1ZKWjdxRzhjUExpSWJwUHNLU1YzU2dfMDlGUkpId2o=','base64').toString();
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH || '356cbcba6e8481c7cbb712fca92e6905dc5459e9cf80077ed6cc4ee8774ba4fa';
