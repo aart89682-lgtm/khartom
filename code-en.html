@@ -10,10 +10,10 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
 
-.top-header{display:grid;height:80px;width:100%;grid-template-columns:1fr 3fr;background:linear-gradient(#f33432,#bc262a)}
+.top-header{display:grid;min-height:80px;width:100%;grid-template-columns:1fr 3fr;background:linear-gradient(#f33432,#bc262a)}
 .header-logo{width:100%;height:100%;display:inline-grid;place-items:center}
 .header-logo img{height:60px}
-.header-text{color:#fff;text-align:right;display:inline-grid;align-items:center;padding-right:3vw;font-size:24px;font-weight:700;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
+.header-text{color:#fff;text-align:right;display:inline-grid;align-items:center;padding:10px 3vw;font-size:20px;font-weight:700;line-height:1.4;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
 
 .section{flex:1}
 .prelogin{padding:20px 16px}
@@ -50,8 +50,8 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 .lo-text{font-size:14px;color:#bc262a;font-weight:600}
 
 @media(max-width:480px){
-  .header-text{font-size:18px;padding-right:12px}
-  .top-header{height:70px}
+  .header-text{font-size:16px;padding:8px 12px}
+  .header-logo img{height:50px}
   .loginbox{padding:20px 16px}
   .code-inputs input{width:42px;height:46px;font-size:20px}
 }
